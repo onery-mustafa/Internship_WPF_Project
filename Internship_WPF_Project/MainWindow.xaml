@@ -42,10 +42,10 @@
             <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
 
-            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Width="150" Height="20" Background="White">
+            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Width="150" Height="20" Background="White" >
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="70" MaxWidth="145"/>
                         <ColumnDefinition Width="5" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
