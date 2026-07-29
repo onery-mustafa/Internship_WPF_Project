@@ -4,9 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Internship_WPF_Project"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        mc:Ignorable="d" MouseLeftButtonDown="Window_MouseLeftButton"
+        Title="MainWindow" Height="600" Width="800">
+        
+       
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
+    </WindowChrome.WindowChrome>
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition />
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#2f4f4f" />
+        <Rectangle Grid.Row="2" Fill="Black" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="20" Width="60" >
+            <Button Height="20" Width="20" Background="Yellow" Click="btnMinimize_Click" Content="-" Foreground="Black"/>
+            <Button Height="20" Width="20" Background="Blue" Click="btnMaximize_Click" Content="⬜" Foreground="Black"/>
+            <Button Height="20" Width="20" Background="Red" Click="btnClose_Click" Content="X" Foreground="Black"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Column="0" Fill="#2f4f4f" />
+            <Rectangle Grid.Column="1" Fill="#a2b5cd" />
+        </Grid>
+        
+        
 
     </Grid>
 </Window>
+    
+    
+    
+    <!-- 
+        #00868b
+    1c0f45
+        
+    WindowState="Maximized"
+MinWidth="850"
+MinHeight="600">
+        
+        
+        -->
