@@ -29,6 +29,8 @@
             <Button Height="20" Width="20" Background="Red" Click="btnClose_Click" Content="X" Foreground="Black"/>
         </StackPanel>
 
+        <Label Grid.Row="2" Content="ROBOCAM PLUS" HorizontalAlignment="Center" Foreground="White"/>
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
@@ -54,5 +56,5 @@
 MinWidth="850"
 MinHeight="600">
         
-        
+        font awesome
         -->
