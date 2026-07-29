@@ -21,13 +21,6 @@ namespace Internship_WPF_Project
             WindowState = WindowState.Minimized;
         }
 
-        private void btnMaximize_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Maximized) WindowState = WindowState.Normal;
-            else WindowState = WindowState.Maximized;
-            
-        }
-
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
