@@ -29,6 +29,8 @@
             <Button Height="20" Width="20" Background="Red" Click="btnClose_Click" Content="X" Foreground="Black"/>
         </StackPanel>
 
+        
+
         <Label Grid.Row="2" Content="ROBOCAM PLUS" HorizontalAlignment="Center" Foreground="White"/>
 
         <Grid Grid.Row="1">
@@ -37,8 +39,22 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Column="0" Fill="#2f4f4f" />
+            <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
+
+            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Width="150" Height="20" Background="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle Fill="Green" />
+                    <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Gray"/>
+                </Grid>
+
+            </StackPanel>
         </Grid>
         
         
