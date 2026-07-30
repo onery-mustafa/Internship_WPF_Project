@@ -7,30 +7,26 @@
         mc:Ignorable="d" MouseLeftButtonDown="Window_MouseLeftButton"
         Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize">
         
-       
-
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
     </WindowChrome.WindowChrome>
 
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="100" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Rectangle Fill="#2f4f4f" />
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="20" Width="800" Background="Black" >
+        <StackPanel Orientation="Horizontal" Background="Black" >
             <TextBlock Height="20" Width="760" Text="ROBOCAM PLUS" Foreground="White" TextAlignment="Center" />
             <Button Height="20" Width="20" Background="Blue" Click="btnMinimize_Click" Content="-" Foreground="Black"/>
             <Button Height="20" Width="20" Background="Red" Click="btnClose_Click" Content="X" Foreground="Black"/>
         </StackPanel>
 
-        
+        <Rectangle Grid.Row="1" Fill="#2f4f4f" />
 
-
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="170"/>
                 <ColumnDefinition />
@@ -39,7 +35,7 @@
             <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
 
-            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Width="170" Height="25" Background="LightGray" >
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Width="170" Height="25" Background="LightGray" >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="70" MaxWidth="165"/>
