@@ -11,14 +11,14 @@
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
     </WindowChrome.WindowChrome>
 
-    <Grid >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="100" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Background="Black" >
+        <StackPanel Orientation="Horizontal" Background="Black">
             <TextBlock Height="20" Width="760" Text="ROBOCAM PLUS" Foreground="White" TextAlignment="Center" />
             <Button Height="20" Width="20" Background="Blue" Click="btnMinimize_Click" Content="-" Foreground="Black"/>
             <Button Height="20" Width="20" Background="Red" Click="btnClose_Click" Content="X" Foreground="Black"/>
@@ -35,19 +35,29 @@
             <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
 
-            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Width="170" Height="25" Background="LightGray" >
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70" MaxWidth="165"/>
-                        <ColumnDefinition Width="5" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="btnRun" Width="42.5" Height="30" Content="Run" Background="#1c0f45" Foreground="White"/>
+                    <Button Name="btnStop" Width="42.5" Height="30" Content="Stop" Background="#1c0f45" Foreground="White"/>
+                    <Button Name="btnCancel" Width="42.5" Height="30" Content="Cancel" Background="#1c0f45" Foreground="White"/>
+                    <Button Name="btnRestart" Width="42.5" Height="30" Content="Restart" Background="#1c0f45" Foreground="White"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" Width="170" Height="25" Background="LightGray" >
+                    <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="%10" TextAlignment="Center"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45" MaxWidth="140"/>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                    <Rectangle Fill="Green" />
-                    <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Gray"/>
-                </Grid>
-
+                        <Rectangle Fill="Green" />
+                        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Gray"/>
+                    </Grid>
+                </StackPanel>
             </StackPanel>
+
         </Grid>
         
         
