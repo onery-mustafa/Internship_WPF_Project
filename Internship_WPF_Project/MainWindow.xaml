@@ -23,7 +23,8 @@
         <Rectangle Fill="#2f4f4f" />
         <Rectangle Grid.Row="2" Fill="Black" />
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="20" Width="40" >
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="20" Width="800" Background="Black" >
+            <TextBlock Height="20" Width="760" />
             <Button Height="20" Width="20" Background="Blue" Click="btnMinimize_Click" Content="-" Foreground="Black"/>
             <Button Height="20" Width="20" Background="Red" Click="btnClose_Click" Content="X" Foreground="Black"/>
         </StackPanel>
