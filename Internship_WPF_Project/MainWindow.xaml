@@ -17,21 +17,18 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition />
-            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
         <Rectangle Fill="#2f4f4f" />
-        <Rectangle Grid.Row="2" Fill="Black" />
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="20" Width="800" Background="Black" >
-            <TextBlock Height="20" Width="760" />
+            <TextBlock Height="20" Width="760" Text="ROBOCAM PLUS" Foreground="White" TextAlignment="Center" />
             <Button Height="20" Width="20" Background="Blue" Click="btnMinimize_Click" Content="-" Foreground="Black"/>
             <Button Height="20" Width="20" Background="Red" Click="btnClose_Click" Content="X" Foreground="Black"/>
         </StackPanel>
 
         
 
-        <Label Grid.Row="2" Content="ROBOCAM PLUS" HorizontalAlignment="Center" Foreground="White"/>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
