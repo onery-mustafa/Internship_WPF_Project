@@ -44,7 +44,7 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Width="170" Height="25" Background="LightGray" >
-                    <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="%10" TextAlignment="Center" />
+                    <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="{Binding SpeedValue, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" />
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Name="Speed" Width="{Binding SpeedValue, UpdateSourceTrigger=PropertyChanged}" MaxWidth="140"/>
