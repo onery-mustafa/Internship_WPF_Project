@@ -58,8 +58,8 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Height="150">
-                <Grid Height="150" Width="170">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Height="200">
+                <Grid Height="200" Width="170">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30" />
                         <RowDefinition />
@@ -77,6 +77,33 @@
 
                     <Label Content="User Position" Foreground="AliceBlue" />
                     <Label Grid.Column="1" Content="Joint Position" Foreground="AliceBlue" />
+
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition Height="28.333" />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="  X :   " Foreground="White" />
+                        <Label Grid.Row="1" Grid.Column="0" Content="  Y :   " Foreground="White" />
+                        <Label Grid.Row="2" Grid.Column="0" Content="  Z :   " Foreground="White" />
+                        <Label Grid.Row="3" Grid.Column="0" Content="  W :   " Foreground="White" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="  P :   " Foreground="White" />
+                        <Label Grid.Row="5" Grid.Column="0" Content="  R :   " Foreground="White" />
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        
+                    </Grid>
                 </Grid>
             </StackPanel>
 
@@ -100,5 +127,5 @@ MinHeight="600">
     Grid.RowSpan="2"
         font awesome
     
-    <Label Content="  X:   " Grid.Row="1" Grid.Column="0" Foreground="White" />
+    
         -->
