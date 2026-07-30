@@ -47,7 +47,7 @@
                     <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="%10" TextAlignment="Center" />
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="45" MaxWidth="140"/>
+                            <ColumnDefinition Name="Speed" Width="{Binding SpeedValue, UpdateSourceTrigger=PropertyChanged}" MaxWidth="140"/>
                             <ColumnDefinition Width="5" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>

@@ -1,18 +1,30 @@
 ﻿using System.Windows;
-
+using System.ComponentModel;
 
 
 namespace Internship_WPF_Project
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public MainWindow()
         {
+            DataContext = this;
             InitializeComponent();
+        }
 
-            
+        private int speedValue;
 
+        public event PropertyChangedEventHandler? PropertyChanged;
 
+        public int SpeedValue
+        {
+            get { return speedValue; }
+
+            set
+            {
+                speedValue = value;
+                OnPropertyChanged("SpeedValue");
+            }
 
         }
 
@@ -30,5 +42,12 @@ namespace Internship_WPF_Project
         {
             DragMove();
         }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
     }
 }
