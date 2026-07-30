@@ -34,17 +34,17 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="170"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
             <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
 
-            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Width="150" Height="20" Background="White" >
+            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Width="170" Height="25" Background="LightGray" >
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70" MaxWidth="145"/>
+                        <ColumnDefinition Width="70" MaxWidth="165"/>
                         <ColumnDefinition Width="5" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
