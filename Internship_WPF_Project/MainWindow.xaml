@@ -37,7 +37,7 @@
 
             <StackPanel Grid.Column="0" Orientation="Vertical" Height="55" VerticalAlignment="Top" >
                 <StackPanel Orientation="Horizontal">
-                    <Button Name="btnRun" Width="42.5" Height="30" Content="Run" Background="#1c0f45" Foreground="White"/>
+                    <Button Name="btnRun" Width="42.5" Height="30" Content="Run" Background="#1c0f45" Foreground="White" />
                     <Button Name="btnStop" Width="42.5" Height="30" Content="Stop" Background="#1c0f45" Foreground="White"/>
                     <Button Name="btnCancel" Width="42.5" Height="30" Content="Cancel" Background="#1c0f45" Foreground="White"/>
                     <Button Name="btnRestart" Width="42.5" Height="30" Content="Restart" Background="#1c0f45" Foreground="White"/>

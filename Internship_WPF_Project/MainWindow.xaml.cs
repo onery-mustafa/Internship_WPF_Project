@@ -46,6 +46,7 @@ namespace Internship_WPF_Project
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            //SpeedValue.Value = SpeedValue.Value / 140 * 100;
         }
 
 
