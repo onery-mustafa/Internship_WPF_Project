@@ -56,6 +56,15 @@
                         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Gray"/>
                     </Grid>
                 </StackPanel>
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                    <Grid Height="100" Width="170" Background="#1c0f45">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                    </Grid>    
+                </StackPanel>
             </StackPanel>
 
         </Grid>
