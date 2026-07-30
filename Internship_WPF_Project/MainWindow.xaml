@@ -44,10 +44,10 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Width="170" Height="25" Background="LightGray" >
-                    <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="{Binding SpeedValue, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" />
+                    <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="{Binding SpeedValue.Value, StringFormat={}{0:0}, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" />
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Name="Speed" Width="{Binding SpeedValue, UpdateSourceTrigger=PropertyChanged}" MaxWidth="140"/>
+                            <ColumnDefinition Name="Speed" Width="{Binding SpeedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxWidth="140"/>
                             <ColumnDefinition Width="5" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>

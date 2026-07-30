@@ -12,11 +12,11 @@ namespace Internship_WPF_Project
             InitializeComponent();
         }
 
-        private int speedValue;
+        private GridLength speedValue;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public int SpeedValue
+        public GridLength SpeedValue
         {
             get { return speedValue; }
 
