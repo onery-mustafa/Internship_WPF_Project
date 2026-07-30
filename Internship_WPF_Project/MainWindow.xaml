@@ -35,14 +35,14 @@
             <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
 
-            <StackPanel Grid.Column="0" Orientation="Vertical">
+            <StackPanel Grid.Column="0" Orientation="Vertical" Height="55" VerticalAlignment="Top" >
                 <StackPanel Orientation="Horizontal">
                     <Button Name="btnRun" Width="42.5" Height="30" Content="Run" Background="#1c0f45" Foreground="White"/>
                     <Button Name="btnStop" Width="42.5" Height="30" Content="Stop" Background="#1c0f45" Foreground="White"/>
                     <Button Name="btnCancel" Width="42.5" Height="30" Content="Cancel" Background="#1c0f45" Foreground="White"/>
                     <Button Name="btnRestart" Width="42.5" Height="30" Content="Restart" Background="#1c0f45" Foreground="White"/>
                 </StackPanel>
-                
+
                 <StackPanel Orientation="Horizontal" Width="170" Height="25" Background="LightGray" >
                     <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="%10" TextAlignment="Center"/>
                     <Grid>
@@ -56,15 +56,24 @@
                         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Gray"/>
                     </Grid>
                 </StackPanel>
+            </StackPanel>
 
-                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
-                    <Grid Height="100" Width="170" Background="#1c0f45">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                    </Grid>    
-                </StackPanel>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Height="150">
+                <Grid Height="150" Width="170">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle Fill="#1c0f45" Grid.RowSpan="2" Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
+                    <Rectangle Grid.Column="1" Fill="#1c0f45" Grid.RowSpan="2" Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
+                </Grid>
+                
             </StackPanel>
 
         </Grid>
