@@ -6,6 +6,7 @@ namespace Internship_WPF_Project
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        double SpeedValue_int;
         public MainWindow()
         {
             DataContext = this;
@@ -47,6 +48,7 @@ namespace Internship_WPF_Project
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             //SpeedValue.Value = SpeedValue.Value / 140 * 100;
+            SpeedValue_int = SpeedValue.Value;
         }
 
 
