@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Internship_WPF_Project"
         mc:Ignorable="d" MouseLeftButtonDown="Window_MouseLeftButton"
         Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize">
-        
+
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
     </WindowChrome.WindowChrome>
@@ -25,6 +25,8 @@
         </StackPanel>
 
         <Rectangle Grid.Row="1" Fill="#2f4f4f" />
+
+        <Button Grid.Row="1" Width="100" Height="25" Content="Sign In" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" />
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
