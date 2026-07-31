@@ -13,7 +13,7 @@ namespace Internship_WPF_Project
         }
 
         private GridLength speedValue;
-        private double speedValue_text;
+        private double speedValue_percent;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -25,20 +25,20 @@ namespace Internship_WPF_Project
             {
                 speedValue = value;
                 OnPropertyChanged("SpeedValue");
-                SpeedValue_text = SpeedValue.Value;
+                SpeedValue_percent = SpeedValue.Value;
             }
 
         }
 
-        public double SpeedValue_text
+        public double SpeedValue_percent
         {
-            get { return speedValue_text; }
+            get { return speedValue_percent; }
 
             set
             {
-                speedValue_text = value;
-                speedValue_text = speedValue_text / 140 * 100;  
-                OnPropertyChanged("SpeedValue_text");
+                speedValue_percent = value;
+                speedValue_percent = speedValue_percent / 140 * 100;  
+                OnPropertyChanged("SpeedValue_percent");
             }
 
         }
