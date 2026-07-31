@@ -35,16 +35,16 @@
             <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
 
-            <StackPanel Grid.Column="0" Orientation="Vertical" Height="55" VerticalAlignment="Top" >
+            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Top" Margin="0,10,0,0">
                 <StackPanel Orientation="Horizontal">
-                    <Button Name="btnRun" Width="42.5" Height="30" Content="Run" Background="#1c0f45" Foreground="White" />
-                    <Button Name="btnStop" Width="42.5" Height="30" Content="Stop" Background="#1c0f45" Foreground="White"/>
-                    <Button Name="btnCancel" Width="42.5" Height="30" Content="Cancel" Background="#1c0f45" Foreground="White"/>
-                    <Button Name="btnRestart" Width="42.5" Height="30" Content="Restart" Background="#1c0f45" Foreground="White"/>
+                    <Button Name="btnRun" Width="42.5" Height="42.5" Content="Run" Background="#1c0f45" Foreground="White" BorderBrush="AliceBlue"/>
+                    <Button Name="btnStop" Width="42.5" Height="42.5" Content="Stop" Background="#1c0f45" Foreground="White" BorderBrush="AliceBlue"/>
+                    <Button Name="btnCancel" Width="42.5" Height="42.5" Content="Cancel" Background="#1c0f45" Foreground="White" BorderBrush="AliceBlue"/>
+                    <Button Name="btnRestart" Width="42.5" Height="42.5" Content="Restart" Background="#1c0f45" Foreground="White" BorderBrush="AliceBlue"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Width="170" Height="25" Background="LightGray" >
-                    <TextBlock Height="25" Width="25" Background="Black" Foreground="White" Text="{Binding SpeedValue_percent, StringFormat={}{0:0}, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" />
+                <StackPanel Orientation="Horizontal" Width="170" Height="35" Background="LightGray" Margin="0,10,0,0" >
+                    <TextBlock Height="35" Width="25" Background="#1c0f45" Foreground="White" Text="{Binding SpeedValue_percent, StringFormat={}{0:0}, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" />
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Name="Speed" Width="{Binding SpeedValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxWidth="140"/>
@@ -53,7 +53,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Rectangle Fill="Green" />
-                        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Gray"/>
+                        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="#2f4f4f"/>
                     </Grid>
                 </StackPanel>
             </StackPanel>
