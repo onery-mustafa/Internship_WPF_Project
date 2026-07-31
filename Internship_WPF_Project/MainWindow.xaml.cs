@@ -6,7 +6,6 @@ namespace Internship_WPF_Project
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        double SpeedValue_int;
         public MainWindow()
         {
             DataContext = this;
@@ -14,6 +13,7 @@ namespace Internship_WPF_Project
         }
 
         private GridLength speedValue;
+        private double speedValue_text;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -25,6 +25,20 @@ namespace Internship_WPF_Project
             {
                 speedValue = value;
                 OnPropertyChanged("SpeedValue");
+                SpeedValue_text = SpeedValue.Value;
+            }
+
+        }
+
+        public double SpeedValue_text
+        {
+            get { return speedValue_text; }
+
+            set
+            {
+                speedValue_text = value;
+                speedValue_text = speedValue_text / 140 * 100;  
+                OnPropertyChanged("SpeedValue_text");
             }
 
         }
@@ -47,8 +61,7 @@ namespace Internship_WPF_Project
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            //SpeedValue.Value = SpeedValue.Value / 140 * 100;
-            SpeedValue_int = SpeedValue.Value;
+            //SpeedValue.Value = SpeedValue.Value / 140 * 100;  
         }
 
 
