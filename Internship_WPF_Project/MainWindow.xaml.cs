@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.ComponentModel;
-
+using Internship_WPF_Project.View.SignIn;
 
 namespace Internship_WPF_Project
 {
@@ -64,6 +64,15 @@ namespace Internship_WPF_Project
             //SpeedValue.Value = SpeedValue.Value / 140 * 100;  
         }
 
+        private void btnSignIn_Click(object sender, RoutedEventArgs e)
+        {
+            signin signin = new signin();
+            signin.ShowDialog();
+        }
 
+        private void btnIP_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

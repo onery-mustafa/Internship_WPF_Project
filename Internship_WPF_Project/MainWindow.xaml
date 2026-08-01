@@ -26,7 +26,10 @@
 
         <Rectangle Grid.Row="1" Fill="#2f4f4f" />
 
-        <Button Grid.Row="1" Width="100" Height="25" Content="Sign In" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" />
+        <StackPanel Grid.Row="1" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button Width="100" Height="25" Content="Sign In" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnSignIn_Click" />
+            <Button Width="100" Height="25" Content="IP" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnIP_Click" />
+        </StackPanel>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -39,10 +42,10 @@
 
             <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal">
-                    <Button Name="btnRun" Width="42.5" Height="42.5" Content="Run" Background="#1c0f45" Foreground="White" BorderBrush="Black"/>
-                    <Button Name="btnStop" Width="42.5" Height="42.5" Content="Stop" Background="#1c0f45" Foreground="White" BorderBrush="Black"/>
-                    <Button Name="btnCancel" Width="42.5" Height="42.5" Content="Cancel" Background="#1c0f45" Foreground="White" BorderBrush="Black"/>
-                    <Button Name="btnRestart" Width="42.5" Height="42.5" Content="Restart" Background="#1c0f45" Foreground="White" BorderBrush="Black"/>
+                    <Button Name="btnRun" Width="42.5" Height="42.5" Content="Run" Background="#1c0f45" Foreground="White" BorderBrush="Black" />
+                    <Button Name="btnStop" Width="42.5" Height="42.5" Content="Stop" Background="#1c0f45" Foreground="White" BorderBrush="Black" />
+                    <Button Name="btnCancel" Width="42.5" Height="42.5" Content="Cancel" Background="#1c0f45" Foreground="White" BorderBrush="Black" />
+                    <Button Name="btnRestart" Width="42.5" Height="42.5" Content="Restart" Background="#1c0f45" Foreground="White" BorderBrush="Black" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Width="170" Height="35" Background="LightGray" >

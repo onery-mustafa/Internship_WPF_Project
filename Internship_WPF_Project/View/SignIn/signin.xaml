@@ -1,0 +1,34 @@
+﻿<Window x:Class="Internship_WPF_Project.View.SignIn.signin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Internship_WPF_Project.View.SignIn"
+        mc:Ignorable="d"
+        Title="signin" Height="200" Width="300">
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
+    </WindowChrome.WindowChrome>
+    
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />   
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btnOK" Grid.Column="0" Content="OK" Width="80" Height="30" Click="btnOK_Click" />
+            <Button Name="btnCancel" Grid.Column="1" Content="Cancel" Grid.Row="2" Width="80" Height="30" Click="btnCancel_Click" />
+        </Grid>
+        
+        
+        
+    </Grid>
+</Window>
