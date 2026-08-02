@@ -67,14 +67,18 @@ namespace Internship_WPF_Project
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            signin signin = new signin();
+            signin signin = new signin(this);
+            Opacity = 0.4;
             signin.ShowDialog();
+            Opacity = 1;
         }
 
         private void btnIP_Click(object sender, RoutedEventArgs e)
         {
-            ip ip = new ip();
+            ip ip = new ip(this);
+            Opacity = 0.4;
             ip.ShowDialog();
+            Opacity = 1;
         }
     }
 }

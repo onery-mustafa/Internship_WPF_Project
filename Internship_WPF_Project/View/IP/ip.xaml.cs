@@ -17,8 +17,10 @@ namespace Internship_WPF_Project.View.IP
     /// </summary>
     public partial class ip : Window
     {
-        public ip()
+        public string Input_UserName { get; set; }
+        public ip(Window parentWindow)
         {
+            Owner = parentWindow;
             InitializeComponent();
         }
 

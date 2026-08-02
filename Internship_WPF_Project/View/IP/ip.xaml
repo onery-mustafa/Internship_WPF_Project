@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Internship_WPF_Project.View.IP"
         xmlns:TextBox="clr-namespace:Internship_WPF_Project.View.SignIn"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
         Title="ip" Height="150" Width="300">
 
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
     </WindowChrome.WindowChrome>
-    
+
     <Grid Background="#333333">
         <Grid.RowDefinitions>
             <RowDefinition />

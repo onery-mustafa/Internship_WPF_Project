@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Internship_WPF_Project.View.SignIn"
         xmlns:TextBox="clr-namespace:Internship_WPF_Project.View.SignIn"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
         Title="signin" Height="200" Width="300">
     
     <WindowChrome.WindowChrome>

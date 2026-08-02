@@ -17,8 +17,10 @@ namespace Internship_WPF_Project.View.SignIn
     /// </summary>
     public partial class signin : Window
     {
-        public signin()
+        public string Input_IP { get; set; }
+        public signin(Window parentWindow)
         {
+            Owner = parentWindow;
             InitializeComponent();
         }
 

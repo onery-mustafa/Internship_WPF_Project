@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Internship_WPF_Project"
-        mc:Ignorable="d" MouseLeftButtonDown="Window_MouseLeftButton"
+        mc:Ignorable="d" MouseLeftButtonDown="Window_MouseLeftButton" WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize">
 
     <WindowChrome.WindowChrome>
