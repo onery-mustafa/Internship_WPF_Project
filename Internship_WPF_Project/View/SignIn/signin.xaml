@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Internship_WPF_Project.View.SignIn"
         xmlns:TextBox="clr-namespace:Internship_WPF_Project.View.SignIn"
         mc:Ignorable="d"
-        Title="signin" Height="300" Width="300">
+        Title="signin" Height="200" Width="300">
     
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
@@ -14,25 +14,18 @@
 
     <Grid Background="#333333">
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
             <RowDefinition />   
         </Grid.RowDefinitions>
 
         <TextBox:textbox Grid.Row="0" Width="250" Height="40" Placeholder="User Name" />
         <TextBox:textbox Grid.Row="1" Width="250" Height="40" Placeholder="Password" />
 
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-
-            <Button Name="btnOK" Grid.Column="0" Content="OK" Width="80" Height="30" Click="btnOK_Click" />
-            <Button Name="btnCancel" Grid.Column="1" Content="Cancel" Grid.Row="2" Width="80" Height="30" Click="btnCancel_Click" />
-        </Grid>
-        
-        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button  Name="btnOK" Content="OK" Width="80" Height="30" Click="btnOK_Click"/>
+            <Button  Name="btnCancel" Content="Cancel" Width="80" Height="30" Margin="40,0,0,0" Click="btnCancel_Click"/>
+        </StackPanel>
         
     </Grid>
 </Window>
