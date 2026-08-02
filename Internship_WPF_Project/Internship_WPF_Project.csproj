@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Interop.FRRJIf">
+      <HintPath>..\..\..\..\Desktop\libraries\Interop.FRRJIf.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.FRRobotIFLib">
+      <HintPath>..\..\..\..\Desktop\libraries\Interop.FRRobotIFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Properties.Resources.Designer.cs.dll">
+      <HintPath>..\..\..\..\Desktop\libraries\Properties.Resources.Designer.cs.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
