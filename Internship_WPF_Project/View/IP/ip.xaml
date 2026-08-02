@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Internship_WPF_Project.View.IP"
+        xmlns:TextBox="clr-namespace:Internship_WPF_Project.View.SignIn"
         mc:Ignorable="d"
-        Title="ip" Height="200" Width="200">
-    <Grid>
-        
+        Title="ip" Height="150" Width="300">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" />
+    </WindowChrome.WindowChrome>
+    
+    <Grid Background="#333333">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBox:textbox Grid.Row="0" Width="250" Height="40" Placeholder="IP Adress" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button  Name="btnOK" Content="OK" Width="80" Height="30"/>
+            <Button  Name="btnCancel" Content="Cancel" Width="80" Height="30" Margin="40,0,0,0"/>
+        </StackPanel>
     </Grid>
 </Window>
