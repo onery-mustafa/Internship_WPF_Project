@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.ComponentModel;
 using Internship_WPF_Project.View.SignIn;
+using Internship_WPF_Project.View.IP;
 
 namespace Internship_WPF_Project
 {
@@ -72,7 +73,8 @@ namespace Internship_WPF_Project
 
         private void btnIP_Click(object sender, RoutedEventArgs e)
         {
-
+            ip ip = new ip();
+            ip.ShowDialog();
         }
     }
 }
