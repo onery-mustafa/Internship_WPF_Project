@@ -9,15 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Interop.FRRJIf">
-      <HintPath>..\..\..\..\Desktop\libraries\Interop.FRRJIf.dll</HintPath>
-    </Reference>
-    <Reference Include="Interop.FRRobotIFLib">
-      <HintPath>..\..\..\..\Desktop\libraries\Interop.FRRobotIFLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Properties.Resources.Designer.cs.dll">
-      <HintPath>..\..\..\..\Desktop\libraries\Properties.Resources.Designer.cs.dll</HintPath>
-    </Reference>
+    <COMReference Include="FRRJIf">
+      <VersionMinor>15</VersionMinor>
+      <VersionMajor>42</VersionMajor>
+      <Guid>347ae5e2-b639-4527-b2ec-9d4f4dc4e7a9</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="FRRobotIFLib">
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>e84cc822-360d-4712-90ff-ee4c8c1e0b19</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
 
 </Project>
