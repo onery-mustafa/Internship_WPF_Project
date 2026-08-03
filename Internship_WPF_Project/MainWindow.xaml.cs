@@ -39,6 +39,25 @@ namespace Internship_WPF_Project
         private double r_pos;
         public double R_Pos { get { return r_pos; } set { r_pos = value; OnPropertyChanged("R_Pos"); } }
 
+        private double j1_pos;
+        public double J1_Pos { get { return j1_pos; } set { j1_pos = value; OnPropertyChanged("J1_Pos"); } }
+
+        private double j2_pos;
+        public double J2_Pos { get { return j2_pos; } set { j2_pos = value; OnPropertyChanged("J2_Pos"); } }
+
+        private double j3_pos;
+        public double J3_Pos { get { return j3_pos; } set { j3_pos = value; OnPropertyChanged("J3_Pos"); } }
+
+        private double j4_pos;
+        public double J4_Pos { get { return j4_pos; } set { j4_pos = value; OnPropertyChanged("J4_Pos"); } }
+
+        private double j5_pos;
+        public double J5_Pos { get { return j5_pos; } set { j5_pos = value; OnPropertyChanged("J5_Pos"); } }
+
+        private double j6_pos;
+        public double J6_Pos { get { return j6_pos; } set { j6_pos = value; OnPropertyChanged("J6_Pos"); } }
+
+
 
         public MainWindow()
         {
@@ -119,6 +138,13 @@ namespace Internship_WPF_Project
                 if (intValidJ != 0) // Eklem (Joint) pozisyonları geçerliyse
                 {
                     // J1_Pos = (float)joint.GetValue(0); vs...
+                    J1_Pos = (float)joint.GetValue(0);
+                    J2_Pos = (float)joint.GetValue(1);
+                    J3_Pos = (float)joint.GetValue(2);
+                    J4_Pos = (float)joint.GetValue(3);
+                    J5_Pos = (float)joint.GetValue(4);
+                    J6_Pos = (float)joint.GetValue(5);
+
                 }
             }
         }

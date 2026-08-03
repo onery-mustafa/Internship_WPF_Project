@@ -105,14 +105,17 @@
                         <Label Grid.Row="4" Grid.Column="0" Content="P :" Foreground="White" />
                         <Label Grid.Row="5" Grid.Column="0" Content="R :" Foreground="White" />
 
-                        <Label Grid.Row="0" Grid.Column="1" Content="{Binding X_Pos, StringFormat='  X : {0:F2}'}" Foreground="White" />
-                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Y_Pos, StringFormat='  Y : {0:F2}'}" Foreground="White" />
-                        <Label Grid.Row="2" Grid.Column="1" Content="{Binding Z_Pos, StringFormat='  Z : {0:F2}'}" Foreground="White" />
+                        <Label Grid.Row="0" Grid.Column="1" Content="{Binding X_Pos}" Foreground="White" />
+                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Y_Pos}" Foreground="White" />
+                        <Label Grid.Row="2" Grid.Column="1" Content="{Binding Z_Pos}" Foreground="White" />
+                        <Label Grid.Row="3" Grid.Column="1" Content="{Binding W_Pos}" Foreground="White" />
+                        <Label Grid.Row="4" Grid.Column="1" Content="{Binding P_Pos}" Foreground="White" />
+                        <Label Grid.Row="5" Grid.Column="1" Content="{Binding R_Pos}" Foreground="White" />
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="26"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
@@ -125,12 +128,19 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0" Grid.Column="0" Content="  J1 :   " Foreground="White" />
-                        <Label Grid.Row="1" Grid.Column="0" Content="  J2 :   " Foreground="White" />
-                        <Label Grid.Row="2" Grid.Column="0" Content="  J3 :   " Foreground="White" />
-                        <Label Grid.Row="3" Grid.Column="0" Content="  J4 :   " Foreground="White" />
-                        <Label Grid.Row="4" Grid.Column="0" Content="  J5 :   " Foreground="White" />
-                        <Label Grid.Row="5" Grid.Column="0" Content="  J6 :   " Foreground="White" />
+                        <Label Grid.Row="0" Grid.Column="0" Content="J1 :" Foreground="White" />
+                        <Label Grid.Row="1" Grid.Column="0" Content="J2 :" Foreground="White" />
+                        <Label Grid.Row="2" Grid.Column="0" Content="J3 :" Foreground="White" />
+                        <Label Grid.Row="3" Grid.Column="0" Content="J4 :" Foreground="White" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="J5 :" Foreground="White" />
+                        <Label Grid.Row="5" Grid.Column="0" Content="J6 :" Foreground="White" />
+
+                        <Label Grid.Row="0" Grid.Column="1" Content="{Binding J1_Pos}" Foreground="White" />
+                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding J2_Pos}" Foreground="White" />
+                        <Label Grid.Row="2" Grid.Column="1" Content="{Binding J3_Pos}" Foreground="White" />
+                        <Label Grid.Row="3" Grid.Column="1" Content="{Binding J4_Pos}" Foreground="White" />
+                        <Label Grid.Row="4" Grid.Column="1" Content="{Binding J5_Pos}" Foreground="White" />
+                        <Label Grid.Row="5" Grid.Column="1" Content="{Binding J6_Pos}" Foreground="White" />
 
                     </Grid>
                 </Grid>
