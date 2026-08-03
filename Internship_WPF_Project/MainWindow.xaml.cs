@@ -95,6 +95,8 @@ namespace Internship_WPF_Project
                 else
                 {
                     MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+                    btnIP.Content = "Disconnected";
+                    //btnIP.Background = """Red""";
                 }
             }
             catch (Exception ex)
