@@ -25,6 +25,12 @@ namespace Internship_WPF_Project.View.SignIn
 
         private string placeholder;
 
+        // İçerideki txtInput'un metnine dışarıdan ulaşmamızı sağlar
+        public string Text
+        {
+            get { return txtInput.Text; }
+        }
+
         public string Placeholder
         {
             get { return placeholder; }

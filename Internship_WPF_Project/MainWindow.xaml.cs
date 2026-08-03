@@ -79,6 +79,8 @@ namespace Internship_WPF_Project
             Opacity = 0.4;
             ip.ShowDialog();
             Opacity = 1;
+
+            btnIP.Content = ip.InputIP;
         }
     }
 }

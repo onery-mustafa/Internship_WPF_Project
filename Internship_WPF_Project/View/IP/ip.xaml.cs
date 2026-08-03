@@ -17,7 +17,7 @@ namespace Internship_WPF_Project.View.IP
     /// </summary>
     public partial class ip : Window
     {
-        public string Input_UserName { get; set; }
+        public string InputIP { get; set; }
         public ip(Window parentWindow)
         {
             Owner = parentWindow;
@@ -26,6 +26,7 @@ namespace Internship_WPF_Project.View.IP
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            InputIP = ipInput.Text;
             Close();
         }
 

@@ -28,7 +28,7 @@
 
         <StackPanel Grid.Row="1" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Right">
             <Button Width="100" Height="25" Content="Sign In" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnSignIn_Click" />
-            <Button Width="100" Height="25" Content="IP" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnIP_Click" />
+            <Button Name="btnIP" Width="100" Height="25" Content="IP" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnIP_Click" />
         </StackPanel>
 
         <Grid Grid.Row="2">
