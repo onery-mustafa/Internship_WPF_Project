@@ -3,6 +3,8 @@ using System.ComponentModel;
 using Internship_WPF_Project.View.SignIn;
 using Internship_WPF_Project.View.IP;
 
+using FRRJIf;
+
 namespace Internship_WPF_Project
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
