@@ -27,6 +27,18 @@ namespace Internship_WPF_Project
         public double Y_Pos { get { return y_pos; } set { y_pos = value; OnPropertyChanged("Y_Pos"); } }
         // Not: Z, W, P, R ve J1...J6 için de aynı property'leri yukarıdaki gibi tanımlamalısın.
 
+        private double z_pos;
+        public double Z_Pos { get { return z_pos; } set { z_pos = value; OnPropertyChanged("Z_Pos"); } }
+
+        private double w_pos;
+        public double W_Pos { get { return w_pos; } set { w_pos = value; OnPropertyChanged("W_Pos"); } }
+
+        private double p_pos;
+        public double P_Pos { get { return p_pos; } set { p_pos = value; OnPropertyChanged("P_Pos"); } }
+
+        private double r_pos;
+        public double R_Pos { get { return r_pos; } set { r_pos = value; OnPropertyChanged("R_Pos"); } }
+
 
         public MainWindow()
         {
@@ -97,6 +109,10 @@ namespace Internship_WPF_Project
                 {
                     X_Pos = (float)xyzwpr.GetValue(0);
                     Y_Pos = (float)xyzwpr.GetValue(1);
+                    Z_Pos = (float)xyzwpr.GetValue(2);
+                    W_Pos = (float)xyzwpr.GetValue(3);
+                    P_Pos = (float)xyzwpr.GetValue(4);
+                    R_Pos = (float)xyzwpr.GetValue(5);
                     // Z_Pos = (float)xyzwpr.GetValue(2); vs...
                 }
 
