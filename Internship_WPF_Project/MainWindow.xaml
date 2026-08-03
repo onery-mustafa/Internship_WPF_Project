@@ -104,6 +104,9 @@
                         <Label Grid.Row="3" Grid.Column="0" Content="  W :   " Foreground="White" />
                         <Label Grid.Row="4" Grid.Column="0" Content="  P :   " Foreground="White" />
                         <Label Grid.Row="5" Grid.Column="0" Content="  R :   " Foreground="White" />
+
+                        <Label Grid.Row="0" Grid.Column="1" Content="{Binding X_Pos, StringFormat='  X : {0:F2}'}" Foreground="White" />
+                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Y_Pos, StringFormat='  Y : {0:F2}'}" Foreground="White" />
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="1">
