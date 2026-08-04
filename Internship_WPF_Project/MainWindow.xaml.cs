@@ -70,7 +70,7 @@ namespace Internship_WPF_Project
         {
             // Robottan verileri saniyede 10 kez (100ms) okuyacak WPF zamanlayıcısı
             refreshTimer = new DispatcherTimer();
-            refreshTimer.Interval = TimeSpan.FromMilliseconds(100);
+            refreshTimer.Interval = TimeSpan.FromMilliseconds(1);
             refreshTimer.Tick += RefreshTimer_Tick;
         }
 
