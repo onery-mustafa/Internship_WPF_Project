@@ -14,7 +14,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="80" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -26,14 +26,16 @@
 
         <Rectangle Grid.Row="1" Fill="#2f4f4f" />
 
-        <StackPanel Grid.Row="1" Width="100" Height="75" VerticalAlignment="Top" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="1" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right">
             <Button Width="100" Height="25" Content="Sign In" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnSignIn_Click" />
             <Button Name="btnIP" Width="100" Height="25" Content="Connect" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnIP_Click" />
 
-            <StackPanel Orientation="Horizontal" Height="25" Width="100" >
-                <Label HorizontalAlignment="Left" VerticalAlignment="Center" Content="IP: " Foreground="White" Background="Transparent" />
-                <TextBlock Name="txtIP" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-            </StackPanel>
+            <Border BorderBrush="AliceBlue" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Height="25" Width="100" >
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Center" Content="IP: " Foreground="White" Background="Transparent" />
+                    <TextBlock Name="txtIP" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="No Found"/>
+                </StackPanel>
+            </Border>
         </StackPanel>
 
         <Grid Grid.Row="2">

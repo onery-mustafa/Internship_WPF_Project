@@ -3,30 +3,27 @@ using System.ComponentModel;
 using Internship_WPF_Project.View.SignIn;
 using Internship_WPF_Project.View.IP;
 
-using System.Windows.Threading; // Timer için gerekli
-using System; // Array işlemleri için gerekli
+using System.Windows.Threading; // Timer için
 
-using FRRJIf;
-using System.Drawing;
 
 namespace Internship_WPF_Project
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        // --- FANUC NESNELERİ ---
+        // Fanuc nesneleri
         private FRRJIf.Core mobjCore;
         private FRRJIf.DataTable mobjDataTable;
         private FRRJIf.DataCurPos mobjCurPos;
-        private FRRJIf.DataSysVar mobjSpeedVar; // Hız barı için sistem değişkeni okuyucu
+        private FRRJIf.DataSysVar mobjSpeedVar; // hız
 
-        // --- WPF TIMER ---
-        private DispatcherTimer refreshTimer;
+
+
+        private DispatcherTimer refreshTimer; // timer
 
         private double x_pos;
         public double X_Pos { get { return x_pos; } set { x_pos = value; OnPropertyChanged("X_Pos"); } }
         private double y_pos;
         public double Y_Pos { get { return y_pos; } set { y_pos = value; OnPropertyChanged("Y_Pos"); } }
-        // Not: Z, W, P, R ve J1...J6 için de aynı property'leri yukarıdaki gibi tanımlamalısın.
 
         private double z_pos;
         public double Z_Pos { get { return z_pos; } set { z_pos = value; OnPropertyChanged("Z_Pos"); } }
@@ -69,9 +66,8 @@ namespace Internship_WPF_Project
 
         private void SetupTimer()
         {
-            // Robottan verileri saniyede 10 kez (100ms) okuyacak WPF zamanlayıcısı
             refreshTimer = new DispatcherTimer();
-            refreshTimer.Interval = TimeSpan.FromMilliseconds(1);
+            refreshTimer.Interval = TimeSpan.FromMilliseconds(10);
             refreshTimer.Tick += RefreshTimer_Tick;
         }
 
@@ -84,8 +80,10 @@ namespace Internship_WPF_Project
                 mobjDataTable = mobjCore.DataTable;
 
                 // 2. Data Table'a Okunacak Verileri Kaydetme (Bağlanmadan önce yapılmalı!)
-                mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1); // Group 1 pozisyonları
-                mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // Genel Hız
+                mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1); 
+                mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
+
+               
 
                 // 3. Bağlantıyı Kurma
                 if (mobjCore.Connect(ipAddress))
@@ -100,7 +98,7 @@ namespace Internship_WPF_Project
                 {
                     btnIP.Content = "Disconnected";
                     btnIP.Background = System.Windows.Media.Brushes.Red;
-                    txtIP.Text = "";
+                    txtIP.Text = "No Found";
                     MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);         
                 }
             }
@@ -110,7 +108,7 @@ namespace Internship_WPF_Project
             }
         }
 
-        private void RefreshTimer_Tick(object sender, EventArgs e)
+        private void RefreshTimer_Tick(object sender, EventArgs e)  // pozisyonları güncellemek için çağrılan fonksiyon
         {
             if (mobjCore == null || mobjDataTable == null) return;
 
@@ -156,7 +154,12 @@ namespace Internship_WPF_Project
             }
         }
 
+       
+            
+           
         
+
+
 
         private GridLength speedValue;
         private double speedValue_percent;
@@ -185,6 +188,8 @@ namespace Internship_WPF_Project
                 speedValue_percent = value;
                 speedValue_percent = speedValue_percent / 140 * 100;  
                 OnPropertyChanged("SpeedValue_percent");
+
+                mobjSpeedVar.SetValue((int)SpeedValue_percent);
             }
 
         }
@@ -230,3 +235,32 @@ namespace Internship_WPF_Project
         }
     }
 }
+
+
+
+
+/*
+ 
+ // hız set ve get:
+
+private FRRJIf.DataSysVar mobjSysVarInt_GENERAL_OVERRIDE;
+
+mobjSysVarInt_GENERAL_OVERRIDE = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE");
+
+public bool SetOverride(int speed)
+{
+    var result = mobjSysVarInt_GENERAL_OVERRIDE.SetValue(speed);
+    return result;
+}
+
+public int? GetOverride()
+{
+    object vntValue2 = null;
+    if (mobjSysVarInt_GENERAL_OVERRIDE.GetValue(ref vntValue2) == true)
+    {
+        return Convert.ToInt32((int)vntValue2);
+    }
+    return null;
+}
+
+*/
