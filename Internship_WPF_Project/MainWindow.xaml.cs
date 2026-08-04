@@ -92,6 +92,7 @@ namespace Internship_WPF_Project
                 {
                     btnIP.Background = System.Windows.Media.Brushes.Green;
                     btnIP.Content = "Connected";
+                    txtIP.Text = ipAddress;
                     MessageBox.Show(ipAddress + " adresine başarıyla bağlanıldı!", "Bağlantı Başarılı", MessageBoxButton.OK, MessageBoxImage.Information);
                     refreshTimer.Start(); // Bağlantı başarılıysa veri okumayı başlat
                 }
@@ -99,6 +100,7 @@ namespace Internship_WPF_Project
                 {
                     btnIP.Content = "Disconnected";
                     btnIP.Background = System.Windows.Media.Brushes.Red;
+                    txtIP.Text = "";
                     MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);         
                 }
             }
