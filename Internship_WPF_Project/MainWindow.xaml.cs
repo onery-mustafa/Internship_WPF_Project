@@ -7,6 +7,7 @@ using System.Windows.Threading; // Timer için gerekli
 using System; // Array işlemleri için gerekli
 
 using FRRJIf;
+using System.Drawing;
 
 namespace Internship_WPF_Project
 {
@@ -89,14 +90,16 @@ namespace Internship_WPF_Project
                 // 3. Bağlantıyı Kurma
                 if (mobjCore.Connect(ipAddress))
                 {
+                    btnIP.Background = System.Windows.Media.Brushes.Green;
+                    btnIP.Content = "Connected";
                     MessageBox.Show(ipAddress + " adresine başarıyla bağlanıldı!", "Bağlantı Başarılı", MessageBoxButton.OK, MessageBoxImage.Information);
                     refreshTimer.Start(); // Bağlantı başarılıysa veri okumayı başlat
                 }
                 else
                 {
-                    MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
                     btnIP.Content = "Disconnected";
-                    //btnIP.Background = """Red""";
+                    btnIP.Background = System.Windows.Media.Brushes.Red;
+                    MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);         
                 }
             }
             catch (Exception ex)
@@ -220,7 +223,7 @@ namespace Internship_WPF_Project
             ip.ShowDialog();
             Opacity = 1;
 
-            btnIP.Content = ip.InputIP;
+           // btnIP.Content = ip.InputIP;
             ConnectToRobot(ip.InputIP);
         }
     }
