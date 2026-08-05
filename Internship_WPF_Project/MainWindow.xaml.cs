@@ -95,7 +95,7 @@ namespace Internship_WPF_Project
                     btnIP.Background = System.Windows.Media.Brushes.Green;
                     btnIP.Content = "Connected";
                     txtIP.Text = ipAddress;
-                    MessageBox.Show(ipAddress + " adresine başarıyla bağlanıldı!", "Bağlantı Başarılı", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(ipAddress + " Successfully connected to the address!", "Connection Successful", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     refreshTimer.Start(); // Bağlantı başarılıysa veri okumayı başlat
                 }
                 else
@@ -106,13 +106,13 @@ namespace Internship_WPF_Project
                     btnIP.Content = "Disconnected";
                     btnIP.Background = System.Windows.Media.Brushes.Red;
                     txtIP.Text = "No Found";
-                    MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Connection failed. Check Roboguide's IP address.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Haberleşme Hatası: " + ex.Message);
+                MessageBox.Show("Communication Error: " + ex.Message);
             }
         }
 
@@ -130,7 +130,7 @@ namespace Internship_WPF_Project
                 X_Pos = 0; Y_Pos = 0; Z_Pos = 0; W_Pos = 0; P_Pos = 0; R_Pos = 0;
                 J1_Pos = 0; J2_Pos = 0; J3_Pos = 0; J4_Pos = 0; J5_Pos = 0; J6_Pos = 0;
                 refreshTimer.Stop();
-                MessageBox.Show("Bağlantı koptu!", "Uyarı");
+                MessageBox.Show("Connection lost!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -204,7 +204,7 @@ namespace Internship_WPF_Project
                 OnPropertyChanged("SpeedValue_percent");
 
                 if (communicationState) mobjSpeedVar.SetValue((int)SpeedValue_percent);
-                else MessageBox.Show("Bağlantı yok! Hız ayarı yapılamaz.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
+                else MessageBox.Show("No connection! Speed setting is not possible.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
         }
@@ -241,13 +241,13 @@ namespace Internship_WPF_Project
             {
                 signinState = true;
                 btnSignIn.Content = signin.txtUserName.Text;
-                MessageBox.Show("Giriş başarılı!", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Login successful!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
                 signinState = false;
                 btnSignIn.Content = "Sign In";
-                MessageBox.Show("Kullanıcı adı veya şifre yanlış!", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Invalid username or password!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
         }
@@ -257,7 +257,7 @@ namespace Internship_WPF_Project
             ip ip = new ip(this);
             if (communicationState)
             {
-                MessageBoxResult result = MessageBox.Show("Bağlantıyı sonlandırmak istiyor musunuz?", "Uyarı", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Do you want to terminate the connection?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                 if (result == MessageBoxResult.Yes)
                 {
@@ -278,7 +278,7 @@ namespace Internship_WPF_Project
             
             if (!signinState)
             {
-                MessageBox.Show("Lütfen önce giriş yapın!", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please sign in first!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             Opacity = 0.4;
