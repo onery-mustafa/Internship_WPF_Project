@@ -82,15 +82,15 @@ namespace Internship_WPF_Project
                 mobjDataTable = mobjCore.DataTable;
 
                 // 2. Data Table'a Okunacak Verileri Kaydetme (Bağlanmadan önce yapılmalı!)
-                mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1); 
+                mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1);
                 mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
 
-               
+
 
                 // 3. Bağlantıyı Kurma
                 if (mobjCore.Connect(ipAddress))
                 {
-                    communicationState = true;  
+                    communicationState = true;
                     btnIP.Background = System.Windows.Media.Brushes.Green;
                     btnIP.Content = "Connected";
                     txtIP.Text = ipAddress;
@@ -105,8 +105,8 @@ namespace Internship_WPF_Project
                     btnIP.Content = "Disconnected";
                     btnIP.Background = System.Windows.Media.Brushes.Red;
                     txtIP.Text = "No Found";
-                    MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);      
-                       
+                    MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+
                 }
             }
             catch (Exception ex)
@@ -129,7 +129,7 @@ namespace Internship_WPF_Project
                 X_Pos = 0; Y_Pos = 0; Z_Pos = 0; W_Pos = 0; P_Pos = 0; R_Pos = 0;
                 J1_Pos = 0; J2_Pos = 0; J3_Pos = 0; J4_Pos = 0; J5_Pos = 0; J6_Pos = 0;
                 refreshTimer.Stop();
-                MessageBox.Show("Bağlantı koptu!", "Uyarı");  
+                MessageBox.Show("Bağlantı koptu!", "Uyarı");
                 return;
             }
 
@@ -167,10 +167,10 @@ namespace Internship_WPF_Project
             }
         }
 
-       
-            
-           
-        
+
+
+
+
 
 
 
@@ -199,10 +199,10 @@ namespace Internship_WPF_Project
             set
             {
                 speedValue_percent = value;
-                speedValue_percent = speedValue_percent / 140 * 100;  
+                speedValue_percent = speedValue_percent / 140 * 100;
                 OnPropertyChanged("SpeedValue_percent");
 
-                if(communicationState) mobjSpeedVar.SetValue((int)SpeedValue_percent);
+                if (communicationState) mobjSpeedVar.SetValue((int)SpeedValue_percent);
                 else MessageBox.Show("Bağlantı yok! Hız ayarı yapılamaz.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
@@ -239,18 +239,41 @@ namespace Internship_WPF_Project
 
         private void btnIP_Click(object sender, RoutedEventArgs e)
         {
-            ip ip = new ip(this);
-            Opacity = 0.4;
-            ip.ShowDialog();
-            Opacity = 1;
+            if (communicationState)
+            {
+                MessageBoxResult result = MessageBox.Show("Bağlantıyı sonlandırmak istiyor musunuz?", "Uyarı", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-           // btnIP.Content = ip.InputIP;
+                if (result == MessageBoxResult.Yes)
+                {
+                    mobjCore.Disconnect();
+                    communicationState = false;
+                    btnIP.Content = "Connect";
+                    btnIP.Background = System.Windows.Media.Brushes.Transparent;
+                    txtIP.Text = "No Found";
+                    X_Pos = 0; Y_Pos = 0; Z_Pos = 0; W_Pos = 0; P_Pos = 0; R_Pos = 0;
+                    J1_Pos = 0; J2_Pos = 0; J3_Pos = 0; J4_Pos = 0; J5_Pos = 0; J6_Pos = 0;
+                    refreshTimer.Stop();
 
-            
-            ConnectToRobot(ip.InputIP);
+                    return;
+                }
+                else return;
+            }
+
+                ip ip = new ip(this);
+                Opacity = 0.4;
+                ip.ShowDialog();
+                Opacity = 1;
+
+                // btnIP.Content = ip.InputIP;
+
+
+
+                if (!string.IsNullOrEmpty(ip.InputIP)) ConnectToRobot(ip.InputIP);
+
+            }
         }
     }
-}
+
 
 
 
