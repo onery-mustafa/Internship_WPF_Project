@@ -19,12 +19,12 @@
             <RowDefinition />   
         </Grid.RowDefinitions>
 
-        <TextBox:textbox Grid.Row="0" Width="250" Height="40" Placeholder="User Name" />
-        <TextBox:textbox Grid.Row="1" Width="250" Height="40" Placeholder="Password" />
+        <TextBox:textbox x:Name="txtUserName" Grid.Row="0" Width="250" Height="40" Placeholder="User Name" />
+        <TextBox:textbox x:Name="txtPassword" Grid.Row="1" Width="250" Height="40" Placeholder="Password" />
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button  Name="btnOK" Content="OK" Width="80" Height="30" Click="btnOK_Click"/>
-            <Button  Name="btnCancel" Content="Cancel" Width="80" Height="30" Margin="40,0,0,0" Click="btnCancel_Click"/>
+            <Button  x:Name="btnOK" Content="OK" Width="80" Height="30" Click="btnOK_Click"/>
+            <Button  x:Name="btnCancel" Content="Cancel" Width="80" Height="30" Margin="40,0,0,0" Click="btnCancel_Click"/>
         </StackPanel>
         
     </Grid>

@@ -17,6 +17,7 @@ namespace Internship_WPF_Project
         private FRRJIf.DataSysVar mobjSpeedVar; // hız
 
         private bool communicationState;
+        private bool signinState;
 
 
 
@@ -235,10 +236,25 @@ namespace Internship_WPF_Project
             Opacity = 0.4;
             signin.ShowDialog();
             Opacity = 1;
+
+            if (signin.txtUserName.Text == "Admin" && signin.txtPassword.Text == "1234")
+            {
+                signinState = true;
+                btnSignIn.Content = signin.txtUserName.Text;
+                MessageBox.Show("Giriş başarılı!", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                signinState = false;
+                btnSignIn.Content = "Sign In";
+                MessageBox.Show("Kullanıcı adı veya şifre yanlış!", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
         }
 
         private void btnIP_Click(object sender, RoutedEventArgs e)
         {
+            ip ip = new ip(this);
             if (communicationState)
             {
                 MessageBoxResult result = MessageBox.Show("Bağlantıyı sonlandırmak istiyor musunuz?", "Uyarı", MessageBoxButton.YesNo, MessageBoxImage.Warning);
@@ -259,20 +275,28 @@ namespace Internship_WPF_Project
                 else return;
             }
 
-                ip ip = new ip(this);
-                Opacity = 0.4;
-                ip.ShowDialog();
-                Opacity = 1;
-
-                // btnIP.Content = ip.InputIP;
-
-
-
-                if (!string.IsNullOrEmpty(ip.InputIP)) ConnectToRobot(ip.InputIP);
-
+            
+            if (!signinState)
+            {
+                MessageBox.Show("Lütfen önce giriş yapın!", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
+            Opacity = 0.4;
+            ip.ShowDialog();
+            Opacity = 1;
+            if (signinState)
+            {
+                if (!string.IsNullOrEmpty(ip.InputIP)) ConnectToRobot(ip.InputIP);
+            }
+            
+
+            
+            
+
+            // btnIP.Content = ip.InputIP;
         }
     }
+}
 
 
 
