@@ -16,6 +16,8 @@ namespace Internship_WPF_Project
         private FRRJIf.DataCurPos mobjCurPos;
         private FRRJIf.DataSysVar mobjSpeedVar; // hız
 
+        private bool communicationState;
+
 
 
         private DispatcherTimer refreshTimer; // timer
@@ -88,6 +90,7 @@ namespace Internship_WPF_Project
                 // 3. Bağlantıyı Kurma
                 if (mobjCore.Connect(ipAddress))
                 {
+                    communicationState = true;  
                     btnIP.Background = System.Windows.Media.Brushes.Green;
                     btnIP.Content = "Connected";
                     txtIP.Text = ipAddress;
@@ -96,10 +99,14 @@ namespace Internship_WPF_Project
                 }
                 else
                 {
+                    X_Pos = 0; Y_Pos = 0; Z_Pos = 0; W_Pos = 0; P_Pos = 0; R_Pos = 0;
+                    J1_Pos = 0; J2_Pos = 0; J3_Pos = 0; J4_Pos = 0; J5_Pos = 0; J6_Pos = 0;
+                    communicationState = false;
                     btnIP.Content = "Disconnected";
                     btnIP.Background = System.Windows.Media.Brushes.Red;
                     txtIP.Text = "No Found";
-                    MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);         
+                    MessageBox.Show("Bağlantı kurulamadı. Roboguide IP'sini kontrol edin.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);      
+                       
                 }
             }
             catch (Exception ex)
@@ -115,8 +122,14 @@ namespace Internship_WPF_Project
             // 1. Robottan paket halinde son verileri iste
             if (!mobjDataTable.Refresh())
             {
+                communicationState = false;
+                btnIP.Content = "Disconnected";
+                btnIP.Background = System.Windows.Media.Brushes.Red;
+                txtIP.Text = "No Found";
+                X_Pos = 0; Y_Pos = 0; Z_Pos = 0; W_Pos = 0; P_Pos = 0; R_Pos = 0;
+                J1_Pos = 0; J2_Pos = 0; J3_Pos = 0; J4_Pos = 0; J5_Pos = 0; J6_Pos = 0;
                 refreshTimer.Stop();
-                MessageBox.Show("Bağlantı koptu!", "Uyarı");
+                MessageBox.Show("Bağlantı koptu!", "Uyarı");  
                 return;
             }
 
@@ -189,7 +202,8 @@ namespace Internship_WPF_Project
                 speedValue_percent = speedValue_percent / 140 * 100;  
                 OnPropertyChanged("SpeedValue_percent");
 
-                mobjSpeedVar.SetValue((int)SpeedValue_percent);
+                if(communicationState) mobjSpeedVar.SetValue((int)SpeedValue_percent);
+                else MessageBox.Show("Bağlantı yok! Hız ayarı yapılamaz.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
         }
@@ -231,6 +245,8 @@ namespace Internship_WPF_Project
             Opacity = 1;
 
            // btnIP.Content = ip.InputIP;
+
+            
             ConnectToRobot(ip.InputIP);
         }
     }

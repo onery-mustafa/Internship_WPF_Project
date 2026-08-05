@@ -21,7 +21,7 @@
         <TextBox:textbox x:Name="ipInput" Grid.Row="0" Width="250" Height="40" Placeholder="IP Adress" />
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button  Name="btnOK" Content="OK" Width="80" Height="30" Click="btnOK_Click"/>
+            <Button  Name="btnOK" Content="Connect" Width="80" Height="30" Click="btnOK_Click"/>
             <Button  Name="btnCancel" Content="Cancel" Width="80" Height="30" Margin="40,0,0,0" Click="btnCancel_Click"/>
         </StackPanel>
     </Grid>
