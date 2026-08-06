@@ -4,6 +4,7 @@ using Internship_WPF_Project.View.SignIn;
 using Internship_WPF_Project.View.IP;
 
 using System.Windows.Threading; // Timer için
+using System.Threading.Tasks; // Task.Delay (Puls bekleme süresi) için gerekli
 
 
 namespace Internship_WPF_Project
@@ -18,6 +19,31 @@ namespace Internship_WPF_Project
 
         private bool communicationState;
         private bool signinState;
+        private const int PRG_PAUSED_UOP_OUT = 3; //Program beklemede, FEED HOLDT aktif...
+
+        private int PROD_START_OUT;
+        private const int PRG_RUNNING_UOP_OUT = 2; //Program çalışıyor, CYCLE START aktif...
+        private const int TP_ENABLED_OUT = 7; //Pendant Aktif Solüstteki anahtar...
+        private FRRJIf.DataSysVar mobjSysVarStr_MAIN;
+        private FRRJIf.DataSysVar mobjSysVarInt_GENERAL_OVERRIDE;
+
+        private int CYCLE_START_DIGITAL_OUT;
+        Array RobotStatusArray = new short[10];
+
+        public bool WriteOutput(int index, bool value)
+        {
+            if (mobjCore != null)
+            {
+                short[] intValues = { value ? (short)1 : (short)0 };
+                var result = mobjCore.WriteSDO(index, intValues, 1);
+                return result;
+            }
+            return false;
+        }
+
+       
+
+       
 
 
 
@@ -85,6 +111,7 @@ namespace Internship_WPF_Project
                 // 2. Data Table'a Okunacak Verileri Kaydetme (Bağlanmadan önce yapılmalı!)
                 mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1);
                 mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
+
 
 
 
@@ -294,6 +321,140 @@ namespace Internship_WPF_Project
             
 
             // btnIP.Content = ip.InputIP;
+        }
+
+        public string GetCurrentProgram()
+        {
+            object name = "";
+            if (mobjSysVarStr_MAIN.GetValue(ref name))
+            {
+                return (string)name;
+            }
+            else return "";
+        }
+
+        public class RobotStatus
+        {
+            public bool ServoON;
+            public bool IsReady;
+            public bool IsRunning;
+            public bool IsPaused;
+            public bool HasAlarm;
+            public bool Mode;
+            public bool IsManualMode;
+            public bool IsBusy;
+            public bool IsStopped;
+            public string CurrentProgram;
+            public int CurrentStep;
+            public bool RunningStatus;
+
+        }
+
+        public class RunStatus
+        {
+            public bool RUNNING;
+            public bool PAUSED;
+            public bool ABORTED;
+        }
+
+        public int? GetCurrentStep()
+        {
+            return 0;
+        }
+        public int? GetOverride()
+        {
+            object vntValue2 = null;
+            if (mobjSysVarInt_GENERAL_OVERRIDE.GetValue(ref vntValue2) == true)
+            {
+                return Convert.ToInt32((int)vntValue2);
+            }
+            return null;
+        }
+
+
+        public RobotStatus GetStatus()
+        {
+            if (mobjCore != null)
+            {
+                bool blnUO = mobjCore.ReadUO(1, ref RobotStatusArray, 10);
+                if (blnUO)
+                {
+                    RobotStatus status = new RobotStatus();
+                    status.ServoON = Convert.ToBoolean(RobotStatusArray.GetValue(0));
+                    status.IsReady = Convert.ToBoolean(RobotStatusArray.GetValue(1));
+                    status.IsRunning = Convert.ToBoolean(RobotStatusArray.GetValue(2));
+                    status.IsPaused = Convert.ToBoolean(RobotStatusArray.GetValue(3));
+                    status.HasAlarm = Convert.ToBoolean(RobotStatusArray.GetValue(5));
+                    status.Mode = Convert.ToBoolean(RobotStatusArray.GetValue(7)) ? RobotMode.MANUAL : RobotMode.AUTO;
+                    status.IsManualMode = Convert.ToBoolean(RobotStatusArray.GetValue(7));
+                    status.IsBusy = Convert.ToBoolean(RobotStatusArray.GetValue(9));
+                    status.IsStopped = !status.IsRunning && !status.IsPaused;
+                    status.CurrentProgram = GetCurrentProgram();
+                    status.CurrentStep = (int)GetCurrentStep();
+                    status.CurrentPosition = GetCurrentCartesianPosition();
+                    status.SpeedValue = GetOverride().Value;
+                    getInfo(status);
+                    if (status.IsRunning) status.RunningStatus = true;
+                    else if (status.IsStopped && status.CurrentStep == 0) status.RunningStatus = RunStatus.ABORTED;
+                    else if (status.IsPaused) status.RunningStatus = RunStatus.PAUSED;
+                    return status;
+                }
+            }
+            return null;
+        }
+
+
+
+
+        public bool Start()
+        {
+            int count = 0;
+            while (true)
+            {
+                ++count;
+                var value = RobotStatusArray.GetValue(PRG_PAUSED_UOP_OUT);
+                if (value is short s)
+                {
+                    if (s == 1)
+                    {
+                        if (WriteOutput(CYCLE_START_DIGITAL_OUT, true))
+                        {
+                            Thread.Sleep(400);
+                            if (WriteOutput(CYCLE_START_DIGITAL_OUT, false)) GetStatus();
+                        }
+                    }
+                    else
+                    {
+                        if (WriteOutput(PROD_START_OUT, true))
+                        {
+                            Thread.Sleep(400);
+                            if (WriteOutput(PROD_START_OUT, false)) GetStatus();
+                        }
+                    }
+                    if ((short)RobotStatusArray.GetValue(PRG_RUNNING_UOP_OUT) == 1 ||
+                        (short)RobotStatusArray.GetValue(TP_ENABLED_OUT) == 1 ||
+                        count > 10) break;
+                }
+            }
+            return true;
+        }
+
+
+
+
+
+
+
+
+
+        private void btnRun_Click(object sender, RoutedEventArgs e)
+        
+        {
+            // mobjCore.WriteUI(6, 1, 1);
+
+            Start();
+
+   
         }
     }
 }
