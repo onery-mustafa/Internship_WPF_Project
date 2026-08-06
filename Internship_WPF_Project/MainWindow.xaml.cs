@@ -233,6 +233,22 @@ namespace Internship_WPF_Project
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             signin signin = new signin(this);
+
+            if (signinState)
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to sign out?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    signinState = false;
+                    btnSignIn.Content = "Sign In";
+                    return;
+                }
+            }
+
             Opacity = 0.4;
             signin.ShowDialog();
             Opacity = 1;
@@ -250,6 +266,7 @@ namespace Internship_WPF_Project
                 MessageBox.Show("Invalid username or password!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            
         }
 
         private void btnIP_Click(object sender, RoutedEventArgs e)
