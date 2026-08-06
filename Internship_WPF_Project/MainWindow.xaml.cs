@@ -4,6 +4,7 @@ using Internship_WPF_Project.View.SignIn;
 using Internship_WPF_Project.View.IP;
 
 using System.Windows.Threading; // Timer için
+using System.Threading.Tasks; // asenkron timer için. işlemler için. 
 
 
 namespace Internship_WPF_Project
@@ -312,8 +313,85 @@ namespace Internship_WPF_Project
 
             // btnIP.Content = ip.InputIP;
         }
+
+        private void btnMode1_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnMode2.Foreground == System.Windows.Media.Brushes.Yellow) btnMode2.Foreground = System.Windows.Media.Brushes.White;
+            btnMode1.Foreground = System.Windows.Media.Brushes.Yellow;
+        }
+
+        private void btnMode2_Click(object sender, RoutedEventArgs e)
+        {
+            if(btnMode1.Foreground == System.Windows.Media.Brushes.Yellow) btnMode1.Foreground = System.Windows.Media.Brushes.White;
+            btnMode2.Foreground = System.Windows.Media.Brushes.Yellow;
+        }
+
+        private void btnDrawer1_Click(object sender, RoutedEventArgs e)
+        {
+            btnDrawer1.Foreground = System.Windows.Media.Brushes.Yellow;
+            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+        }
+
+        private void btnDrawer2_Click(object sender, RoutedEventArgs e)
+        {
+            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer2.Foreground = System.Windows.Media.Brushes.Yellow;
+            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+        }
+
+        private void btnDrawer3_Click(object sender, RoutedEventArgs e)
+        {
+            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer3.Foreground = System.Windows.Media.Brushes.Yellow;
+            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+        }
+
+        private void btnDrawer4_Click(object sender, RoutedEventArgs e)
+        {
+            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer4.Foreground = System.Windows.Media.Brushes.Yellow;
+            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+        }
+
+        private void btnDrawer5_Click(object sender, RoutedEventArgs e)
+        {
+            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
+            btnDrawer5.Foreground = System.Windows.Media.Brushes.Yellow;
+        }
+
+        private async void btnRun_Click(object sender, RoutedEventArgs e)  //Çalışmıyor!!
+        {
+            // mobjCore.Cgtp.SelectProgram("MAIN", 1);  // https://github.com/underautomation/Fanuc.NET/blob/main/README.md
+            if (communicationState)
+            {
+                Array signalOn = new short[] { 1 };
+                Array signalOff = new short[] { 0 };
+    
+                mobjCore.WriteUI(6, ref signalOn, 1);              
+                await Task.Delay(300);
+                mobjCore.WriteUI(6, ref signalOff, 1);
+            }
+            else
+            {
+                MessageBox.Show("Robota bağlı değilsiniz.");
+            }
+        }
+        }
+            
     }
-}
+
 
 
 
