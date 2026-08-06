@@ -70,87 +70,94 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Height="200">
-                <Grid Height="200" Width="170">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-
-                    <Rectangle Grid.Column="0" Grid.Row="0" Fill="#1c0f45"  Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
-                    <Rectangle Grid.Column="1" Grid.Row="0" Fill="#1c0f45" Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
-                    <Rectangle Grid.Column="0" Grid.Row="1" Fill="#1c0f45"  Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
-                    <Rectangle Grid.Column="1" Grid.Row="1" Fill="#1c0f45" Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
-
-                    <Label Content="User Position" Foreground="AliceBlue" />
-                    <Label Grid.Column="1" Content="Joint Position" Foreground="AliceBlue" />
-
-                    <Grid Grid.Row="1" Grid.Column="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="26"/>
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Border Width="170" Height="30"  Margin="0,0,0,10" CornerRadius="10,10,10,10" Background="#1c0f45">
+                        
+                    </Border>
+                </StackPanel>
+                <StackPanel>
+                    <Grid Height="200" Width="170">
                         <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
+                            <RowDefinition Height="30" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0" Grid.Column="0" Content="X :" Foreground="White" />
-                        <Label Grid.Row="1" Grid.Column="0" Content="Y :" Foreground="White" />
-                        <Label Grid.Row="2" Grid.Column="0" Content="Z :" Foreground="White" />
-                        <Label Grid.Row="3" Grid.Column="0" Content="W :" Foreground="White" />
-                        <Label Grid.Row="4" Grid.Column="0" Content="P :" Foreground="White" />
-                        <Label Grid.Row="5" Grid.Column="0" Content="R :" Foreground="White" />
-
-                        <Label Grid.Row="0" Grid.Column="1" Content="{Binding X_Pos}" Foreground="White" />
-                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Y_Pos}" Foreground="White" />
-                        <Label Grid.Row="2" Grid.Column="1" Content="{Binding Z_Pos}" Foreground="White" />
-                        <Label Grid.Row="3" Grid.Column="1" Content="{Binding W_Pos}" Foreground="White" />
-                        <Label Grid.Row="4" Grid.Column="1" Content="{Binding P_Pos}" Foreground="White" />
-                        <Label Grid.Row="5" Grid.Column="1" Content="{Binding R_Pos}" Foreground="White" />
-                    </Grid>
-
-                    <Grid Grid.Row="1" Grid.Column="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="26"/>
+                            <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Column="0" Grid.Row="0" Fill="#1c0f45"  Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
+                        <Rectangle Grid.Column="1" Grid.Row="0" Fill="#1c0f45" Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
+                        <Rectangle Grid.Column="0" Grid.Row="1" Fill="#1c0f45"  Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
+                        <Rectangle Grid.Column="1" Grid.Row="1" Fill="#1c0f45" Stroke="AliceBlue" RadiusX="10" RadiusY="10"/>
 
-                        <Label Grid.Row="0" Grid.Column="0" Content="J1 :" Foreground="White" />
-                        <Label Grid.Row="1" Grid.Column="0" Content="J2 :" Foreground="White" />
-                        <Label Grid.Row="2" Grid.Column="0" Content="J3 :" Foreground="White" />
-                        <Label Grid.Row="3" Grid.Column="0" Content="J4 :" Foreground="White" />
-                        <Label Grid.Row="4" Grid.Column="0" Content="J5 :" Foreground="White" />
-                        <Label Grid.Row="5" Grid.Column="0" Content="J6 :" Foreground="White" />
+                        <Label Content="User Position" Foreground="AliceBlue" />
+                        <Label Grid.Column="1" Content="Joint Position" Foreground="AliceBlue" />
 
-                        <Label Grid.Row="0" Grid.Column="1" Content="{Binding J1_Pos}" Foreground="White" />
-                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding J2_Pos}" Foreground="White" />
-                        <Label Grid.Row="2" Grid.Column="1" Content="{Binding J3_Pos}" Foreground="White" />
-                        <Label Grid.Row="3" Grid.Column="1" Content="{Binding J4_Pos}" Foreground="White" />
-                        <Label Grid.Row="4" Grid.Column="1" Content="{Binding J5_Pos}" Foreground="White" />
-                        <Label Grid.Row="5" Grid.Column="1" Content="{Binding J6_Pos}" Foreground="White" />
+                        <Grid Grid.Row="1" Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="26"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
 
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Content="X :" Foreground="White" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="Y :" Foreground="White" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="Z :" Foreground="White" />
+                            <Label Grid.Row="3" Grid.Column="0" Content="W :" Foreground="White" />
+                            <Label Grid.Row="4" Grid.Column="0" Content="P :" Foreground="White" />
+                            <Label Grid.Row="5" Grid.Column="0" Content="R :" Foreground="White" />
+
+                            <Label Grid.Row="0" Grid.Column="1" Content="{Binding X_Pos}" Foreground="White" />
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding Y_Pos}" Foreground="White" />
+                            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Z_Pos}" Foreground="White" />
+                            <Label Grid.Row="3" Grid.Column="1" Content="{Binding W_Pos}" Foreground="White" />
+                            <Label Grid.Row="4" Grid.Column="1" Content="{Binding P_Pos}" Foreground="White" />
+                            <Label Grid.Row="5" Grid.Column="1" Content="{Binding R_Pos}" Foreground="White" />
+                        </Grid>
+
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="26"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Content="J1 :" Foreground="White" />
+                            <Label Grid.Row="1" Grid.Column="0" Content="J2 :" Foreground="White" />
+                            <Label Grid.Row="2" Grid.Column="0" Content="J3 :" Foreground="White" />
+                            <Label Grid.Row="3" Grid.Column="0" Content="J4 :" Foreground="White" />
+                            <Label Grid.Row="4" Grid.Column="0" Content="J5 :" Foreground="White" />
+                            <Label Grid.Row="5" Grid.Column="0" Content="J6 :" Foreground="White" />
+
+                            <Label Grid.Row="0" Grid.Column="1" Content="{Binding J1_Pos}" Foreground="White" />
+                            <Label Grid.Row="1" Grid.Column="1" Content="{Binding J2_Pos}" Foreground="White" />
+                            <Label Grid.Row="2" Grid.Column="1" Content="{Binding J3_Pos}" Foreground="White" />
+                            <Label Grid.Row="3" Grid.Column="1" Content="{Binding J4_Pos}" Foreground="White" />
+                            <Label Grid.Row="4" Grid.Column="1" Content="{Binding J5_Pos}" Foreground="White" />
+                            <Label Grid.Row="5" Grid.Column="1" Content="{Binding J6_Pos}" Foreground="White" />
+
+                        </Grid>
                     </Grid>
-                </Grid>
+                </StackPanel>
             </StackPanel>
 
             <Grid Grid.Column="1">
