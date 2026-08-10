@@ -47,6 +47,20 @@
             <Rectangle Grid.Column="0" Fill="#00868b" />
             <Rectangle Grid.Column="1" Fill="#a2b5cd" />
 
+            <StackPanel Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="630">
+                <Border Height="30" Background="#333333" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1">
+                    <Label Content="Alarm Messages" Foreground="White" HorizontalAlignment="Center"/>
+                    
+                </Border>
+
+                <Border Height="100" Background="#333333" CornerRadius="10,10,10,10">
+                    <StackPanel>
+                        
+                    </StackPanel>
+                    
+                </Border>
+            </StackPanel>
+
             <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal">
                     <Button Name="btnRun" Width="42.5" Height="42.5" Content="Run" Background="#1c0f45" Foreground="White" BorderBrush="Black" Click="btnRun_Click" />

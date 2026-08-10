@@ -279,6 +279,7 @@ namespace Internship_WPF_Project
 
                 if (result == MessageBoxResult.Yes)
                 {
+                    
                     mobjCore.Disconnect();
                     communicationState = false;
                     btnIP.Content = "Connect";
@@ -318,6 +319,7 @@ namespace Internship_WPF_Project
         {
             if (btnMode2.Foreground == System.Windows.Media.Brushes.Yellow) btnMode2.Foreground = System.Windows.Media.Brushes.White;
             btnMode1.Foreground = System.Windows.Media.Brushes.Yellow;
+
         }
 
         private void btnMode2_Click(object sender, RoutedEventArgs e)
@@ -369,6 +371,8 @@ namespace Internship_WPF_Project
             btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer5.Foreground = System.Windows.Media.Brushes.Yellow;
+
+            
         }
 
         private async void btnRun_Click(object sender, RoutedEventArgs e)  //Çalışmıyor!!
@@ -388,7 +392,9 @@ namespace Internship_WPF_Project
                 MessageBox.Show("Robota bağlı değilsiniz.");
             }
         }
-        }
+
+ 
+    }
             
     }
 
