@@ -55,8 +55,15 @@
 
                 <Border Height="100" Background="#333333" CornerRadius="10,10,10,10">
                     <StackPanel>
+                        <StackPanel>
                         
-                    </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Right" Width="100" Height="100">
+                            <Button x:Name="btnAlarmsClear" Content="Clear Alarms" Height="50" Background="Transparent" Foreground="White" BorderBrush="AliceBlue" BorderThickness="1" Click="btnAlarmsClear_Click"/>
+                            <Button x:Name="btnAlarm" Content="Button" Height="50" Background="Transparent" Foreground="White" BorderBrush="AliceBlue" BorderThickness="1"/>
+                        </StackPanel>
+                     </StackPanel>
                     
                 </Border>
             </StackPanel>

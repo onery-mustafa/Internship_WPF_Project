@@ -393,7 +393,10 @@ namespace Internship_WPF_Project
             }
         }
 
- 
+        private void btnAlarmsClear_Click(object sender, RoutedEventArgs e)
+        {
+            if(communicationState) mobjCore.ClearAlarm(0);
+        }
     }
             
     }
