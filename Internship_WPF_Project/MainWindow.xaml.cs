@@ -152,12 +152,12 @@ namespace Internship_WPF_Project
                     W_Pos = (float)xyzwpr.GetValue(3);
                     P_Pos = (float)xyzwpr.GetValue(4);
                     R_Pos = (float)xyzwpr.GetValue(5);
-                    // Z_Pos = (float)xyzwpr.GetValue(2); vs...
+                    
                 }
 
                 if (intValidJ != 0) // Eklem (Joint) pozisyonları geçerliyse
                 {
-                    // J1_Pos = (float)joint.GetValue(0); vs...
+                    
                     J1_Pos = (float)joint.GetValue(0);
                     J2_Pos = (float)joint.GetValue(1);
                     J3_Pos = (float)joint.GetValue(2);
@@ -168,10 +168,6 @@ namespace Internship_WPF_Project
                 }
             }
         }
-
-
-
-
 
 
 
