@@ -26,7 +26,15 @@
 
         <Rectangle Grid.Row="1" Fill="#2f4f4f" />
 
-        <StackPanel Grid.Row="1" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right">
+        <Border Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="AliceBlue" BorderThickness="1" Width="250" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Program Name: " Foreground="AliceBlue"/>
+                <TextBlock x:Name="txtProgramName" Foreground="AliceBlue"/>
+            </StackPanel>
+        </Border>
+
+    
+        <StackPanel Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Right">
             <Button x:Name="btnSignIn" Width="100" Height="25" Content="Sign In" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnSignIn_Click" />
             <Button x:Name="btnIP" Width="100" Height="25" Content="Connect" Background="Transparent" Foreground ="AliceBlue" BorderBrush="AliceBlue" Click="btnIP_Click" />
 
