@@ -27,9 +27,9 @@
         <Rectangle Grid.Row="1" Fill="#2f4f4f" />
 
         <Border Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="AliceBlue" BorderThickness="1" Width="250" Height="30">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" >
                 <Label Content="Program Name: " Foreground="AliceBlue"/>
-                <TextBlock x:Name="txtProgramName" Foreground="AliceBlue"/>
+                <TextBlock x:Name="txtProgramName" Foreground="AliceBlue" VerticalAlignment="Center"/>
             </StackPanel>
         </Border>
 

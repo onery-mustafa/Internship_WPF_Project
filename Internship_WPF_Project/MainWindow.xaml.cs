@@ -16,6 +16,7 @@ namespace Internship_WPF_Project
         private FRRJIf.DataTable mobjDataTable;
         private FRRJIf.DataCurPos mobjCurPos;
         private FRRJIf.DataSysVar mobjSpeedVar; // hız
+        private FRRJIf.DataTask mobjTask; //program adını alma
 
         private bool communicationState;
         private bool signinState;
@@ -89,6 +90,7 @@ namespace Internship_WPF_Project
                 // 2. Data Table'a Okunacak Verileri Kaydetme (Bağlanmadan önce yapılmalı!)
                 mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1);
                 mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
+                mobjTask = mobjDataTable.AddTask(FRRJIf.FRIF_DATA_TYPE.TASK, 1); // program adı
 
 
 
@@ -169,6 +171,14 @@ namespace Internship_WPF_Project
                     J6_Pos = (float)joint.GetValue(5);
 
                 }
+            }
+            string progName = "";
+            short lineNumber = 0;
+            short state = 0;
+            string parentProgName = "";
+            if (mobjTask.GetValue(ref progName, ref lineNumber, ref state, ref parentProgName))
+            {
+                txtProgramName.Text = progName;
             }
         }
 
