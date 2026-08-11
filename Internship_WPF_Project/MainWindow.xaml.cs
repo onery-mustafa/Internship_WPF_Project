@@ -59,6 +59,9 @@ namespace Internship_WPF_Project
         private double j6_pos;
         public double J6_Pos { get { return j6_pos; } set { j6_pos = value; OnPropertyChanged("J6_Pos"); } }
 
+        private short ufNum;
+        public short UFNum { get { return ufNum; } set { ufNum = value; OnPropertyChanged("UFNum"); } }
+
 
 
         public MainWindow()
@@ -146,13 +149,13 @@ namespace Internship_WPF_Project
                 // Arayüzdeki (UI) Binding özelliklerini güncelle
                 if (intValidC != 0) // Kartezyen pozisyonlar geçerliyse
                 {
+                    UFNum = intUF;
                     X_Pos = (float)xyzwpr.GetValue(0);
                     Y_Pos = (float)xyzwpr.GetValue(1);
                     Z_Pos = (float)xyzwpr.GetValue(2);
                     W_Pos = (float)xyzwpr.GetValue(3);
                     P_Pos = (float)xyzwpr.GetValue(4);
-                    R_Pos = (float)xyzwpr.GetValue(5);
-                    
+                    R_Pos = (float)xyzwpr.GetValue(5);           
                 }
 
                 if (intValidJ != 0) // Eklem (Joint) pozisyonları geçerliyse

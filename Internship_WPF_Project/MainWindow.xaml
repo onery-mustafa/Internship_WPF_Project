@@ -96,7 +96,7 @@
                 <Border Width="170" Height="30"  Margin="0,0,0,10" CornerRadius="10,10,10,10" Background="#1c0f45">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="User Frame =  " Foreground="AliceBlue" VerticalAlignment="Center" />
-                        <TextBlock Text="0" VerticalAlignment="Center" Foreground="AliceBlue"/>
+                        <TextBlock Text="{Binding UFNum, StringFormat={}{0:0}, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Foreground="AliceBlue"/>
                     </StackPanel>
                 </Border>
                 
