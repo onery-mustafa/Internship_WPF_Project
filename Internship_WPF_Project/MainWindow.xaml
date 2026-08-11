@@ -61,7 +61,7 @@
 
                         <StackPanel HorizontalAlignment="Right" Width="100" Height="100">
                             <Button x:Name="btnAlarmsClear" Content="Clear Alarms" Height="50" Background="Transparent" Foreground="White" BorderBrush="AliceBlue" BorderThickness="1" Click="btnAlarmsClear_Click"/>
-                            <Button x:Name="btnAlarm" Content="Button" Height="50" Background="Transparent" Foreground="White" BorderBrush="AliceBlue" BorderThickness="1"/>
+                            <Button x:Name="btnAlarm" Content="Copy Alarms" Height="50" Background="Transparent" Foreground="White" BorderBrush="AliceBlue" BorderThickness="1"/>
                         </StackPanel>
                      </StackPanel>
                     
@@ -92,11 +92,14 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" >
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Border Width="170" Height="30"  Margin="0,0,0,10" CornerRadius="10,10,10,10" Background="#1c0f45">
-                        
-                    </Border>
-                </StackPanel>
+                
+                <Border Width="170" Height="30"  Margin="0,0,0,10" CornerRadius="10,10,10,10" Background="#1c0f45">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="User Frame =  " Foreground="AliceBlue" VerticalAlignment="Center" />
+                        <TextBlock Text="0" VerticalAlignment="Center" Foreground="AliceBlue"/>
+                    </StackPanel>
+                </Border>
+                
                 <StackPanel>
                     <Grid Height="200" Width="170">
                         <Grid.RowDefinitions>
