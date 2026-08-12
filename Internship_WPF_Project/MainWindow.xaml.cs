@@ -17,6 +17,7 @@ namespace Internship_WPF_Project
         private FRRJIf.DataCurPos mobjCurPos;
         private FRRJIf.DataSysVar mobjSpeedVar; // hız
         private FRRJIf.DataTask mobjTask; //program adını alma
+        private FRRJIf.DataNumReg mobjNumReg; // numerik regiterlerı get ve set edebilmek için. 
 
         private bool communicationState;
         private bool signinState;
@@ -91,6 +92,7 @@ namespace Internship_WPF_Project
                 mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1);
                 mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
                 mobjTask = mobjDataTable.AddTask(FRRJIf.FRIF_DATA_TYPE.TASK, 1); // program adı
+                mobjNumReg = mobjDataTable.AddNumReg(FRRJIf.FRIF_DATA_TYPE.NUMREG_INT, 1, 15); // numerik registerlar
 
 
 
@@ -344,6 +346,8 @@ namespace Internship_WPF_Project
             btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+
+           if(communicationState) mobjNumReg.SetValue(1, 1); // drawer1 için 1. registerı 1 yap
         }
 
         private void btnDrawer2_Click(object sender, RoutedEventArgs e)
@@ -353,6 +357,8 @@ namespace Internship_WPF_Project
             btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+
+            if(communicationState) mobjNumReg.SetValue(1, 2); // drawer2 için 1. registerı 2 yap
         }
 
         private void btnDrawer3_Click(object sender, RoutedEventArgs e)
@@ -362,6 +368,8 @@ namespace Internship_WPF_Project
             btnDrawer3.Foreground = System.Windows.Media.Brushes.Yellow;
             btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+
+            if(communicationState) mobjNumReg.SetValue(1, 3); // drawer3 için 1. registerı 3 yap
         }
 
         private void btnDrawer4_Click(object sender, RoutedEventArgs e)
@@ -371,6 +379,8 @@ namespace Internship_WPF_Project
             btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer4.Foreground = System.Windows.Media.Brushes.Yellow;
             btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
+
+            if(communicationState) mobjNumReg.SetValue(1, 4); // drawer4 için 1. registerı 4 yap
         }
 
         private void btnDrawer5_Click(object sender, RoutedEventArgs e)
@@ -381,7 +391,7 @@ namespace Internship_WPF_Project
             btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
             btnDrawer5.Foreground = System.Windows.Media.Brushes.Yellow;
 
-            
+            if(communicationState) mobjNumReg.SetValue(1, 5); // drawer5 için 1. registerı 5 yap
         }
 
         private async void btnRun_Click(object sender, RoutedEventArgs e)  //Çalışmıyor!!
