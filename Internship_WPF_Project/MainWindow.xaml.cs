@@ -434,9 +434,18 @@ namespace Internship_WPF_Project
 
         private void btnNumRegSet_Click(object sender, RoutedEventArgs e)
         {
+            if (!communicationState)
+            {
+                MessageBox.Show("No connection!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             int numRegIndex = numRegValues.SelectedIndex;
             numRegIndex += 1;
-            if (communicationState) mobjNumReg.SetValue(numRegIndex, Int64.Parse(txtNumRegSet.Text));
+
+            if(!int.TryParse(txtNumRegSet.Text, out int numRegValue)) MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            mobjNumReg.SetValue(numRegIndex, numRegValue);
         }
     }
             
