@@ -434,8 +434,9 @@ namespace Internship_WPF_Project
 
         private void btnNumRegSet_Click(object sender, RoutedEventArgs e)
         {
-            int numRegIndex = ;
-            if (communicationState) mobjNumReg.SetValue(numRegValues.SelectedIndex, Int64.Parse(txtNumRegSet.Text));
+            int numRegIndex = numRegValues.SelectedIndex;
+            numRegIndex += 1;
+            if (communicationState) mobjNumReg.SetValue(numRegIndex, Int64.Parse(txtNumRegSet.Text));
         }
     }
             

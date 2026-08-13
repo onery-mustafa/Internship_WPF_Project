@@ -236,7 +236,7 @@
                             
                             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="3">
                                 
-                                    <ListView Name="numRegValues" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Extended" />
+                                    <ListView Name="numRegValues" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Single" />
                                     
                                 
                             </ScrollViewer>
