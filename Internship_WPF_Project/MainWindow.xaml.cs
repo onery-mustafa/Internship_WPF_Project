@@ -73,8 +73,8 @@ namespace Internship_WPF_Project
             SetupTimer();
 
             
-            int[] numReg = new int[200];
-            for (int i = 0; i <= numReg.Length; i++) numRegEntries.Items.Add($"R[{i}] = ");
+           // int[] numReg = new int[200];
+            for (int i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
             
             
             /*
@@ -107,7 +107,7 @@ namespace Internship_WPF_Project
                 mobjCurPos = mobjDataTable.AddCurPos(FRRJIf.FRIF_DATA_TYPE.CURPOS, 1);
                 mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
                 mobjTask = mobjDataTable.AddTask(FRRJIf.FRIF_DATA_TYPE.TASK, 1); // program adı
-                mobjNumReg = mobjDataTable.AddNumReg(FRRJIf.FRIF_DATA_TYPE.NUMREG_INT, 1, 15); // numerik registerlar
+                mobjNumReg = mobjDataTable.AddNumReg(FRRJIf.FRIF_DATA_TYPE.NUMREG_INT, 1, 200); // numerik registerlar
 
 
 
@@ -430,6 +430,12 @@ namespace Internship_WPF_Project
         private void btnAlarmsClear_Click(object sender, RoutedEventArgs e)
         {
             if(communicationState) mobjCore.ClearAlarm(0);
+        }
+
+        private void btnNumRegSet_Click(object sender, RoutedEventArgs e)
+        {
+            int numRegIndex = ;
+            if (communicationState) mobjNumReg.SetValue(numRegValues.SelectedIndex, Int64.Parse(txtNumRegSet.Text));
         }
     }
             
