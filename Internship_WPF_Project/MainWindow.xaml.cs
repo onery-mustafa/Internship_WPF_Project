@@ -1,10 +1,10 @@
-﻿using System.Windows;
-using System.ComponentModel;
+﻿using Internship_WPF_Project.View.IP;
 using Internship_WPF_Project.View.SignIn;
-using Internship_WPF_Project.View.IP;
-
+using System.Collections; // asenkron timer için. işlemler için. 
+using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading; // Timer için
-using System.Threading.Tasks; // asenkron timer için. işlemler için. 
 
 
 namespace Internship_WPF_Project
@@ -71,6 +71,21 @@ namespace Internship_WPF_Project
             DataContext = this;
             InitializeComponent();
             SetupTimer();
+
+            
+            int[] numReg = new int[200];
+            for (int i = 0; i <= numReg.Length; i++) numRegEntries.Items.Add($"R[{i}] = " + i);
+            
+            
+            /*
+            int[] numReg = new int[200];
+            numReg[1] = 0; // drawer1 için 1. registerı 0 yap
+            for (int i = 0; i < 200; i++)
+            {
+                
+            }
+            */
+
         }
 
         private void SetupTimer()
