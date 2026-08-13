@@ -226,9 +226,10 @@
                         </Border>
                         <Border Background="AliceBlue" Width="150" Height="150" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3">
                             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="3">
-                                <ListView Name="numRegEntries" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Extended" />
-
-
+                                
+                                    <ListView Name="numRegEntries" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Extended" />
+                                    
+                                
                             </ScrollViewer>
                         </Border>
                     </StackPanel>

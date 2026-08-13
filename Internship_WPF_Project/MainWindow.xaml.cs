@@ -74,7 +74,7 @@ namespace Internship_WPF_Project
 
             
             int[] numReg = new int[200];
-            for (int i = 0; i <= numReg.Length; i++) numRegEntries.Items.Add($"R[{i}] = " + i);
+            for (int i = 0; i <= numReg.Length; i++) numRegEntries.Items.Add($"R[{i}] = ");
             
             
             /*
