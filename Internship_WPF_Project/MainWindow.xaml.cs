@@ -342,10 +342,22 @@ namespace Internship_WPF_Project
             {
                 if (!string.IsNullOrEmpty(ip.InputIP)) ConnectToRobot(ip.InputIP);
             }
-            
 
-            
-            
+            mobjCore.DataTable.Refresh();
+            numRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjNumReg.GetValue(i, ref valueNumReg);
+                    numRegValues.Items.Add($"R[{i}] = {valueNumReg}");
+                }
+            }
+
+
+
+
 
             // btnIP.Content = ip.InputIP;
         }
