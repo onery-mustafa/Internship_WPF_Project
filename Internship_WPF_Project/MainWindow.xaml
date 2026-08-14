@@ -217,13 +217,16 @@
                                 <Button  x:Name="btnNumRegSet" Content="OK" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click"/>
                             </StackPanel>
                         </Border>
-                        
-                        <Border Background="AliceBlue" Width="150" Height="100" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3">
 
-                            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="3">
+                    <Border Background="AliceBlue" Width="150" Height="100" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="3">
                                 <ListView Name="numRegValues" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Single" />
                             </ScrollViewer>
                         </Border>
+
+                    <Border Background="#3D517D" Width="580" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1" Margin="0,10,0,0">
+                        
+                    </Border>
                     
                     
                     
