@@ -362,73 +362,9 @@ namespace Internship_WPF_Project
             // btnIP.Content = ip.InputIP;
         }
 
-        private void btnMode1_Click(object sender, RoutedEventArgs e)
-        {
-            if (btnMode2.Foreground == System.Windows.Media.Brushes.Yellow) btnMode2.Foreground = System.Windows.Media.Brushes.White;
-            btnMode1.Foreground = System.Windows.Media.Brushes.Yellow;
+        
 
-        }
-
-        private void btnMode2_Click(object sender, RoutedEventArgs e)
-        {
-            if(btnMode1.Foreground == System.Windows.Media.Brushes.Yellow) btnMode1.Foreground = System.Windows.Media.Brushes.White;
-            btnMode2.Foreground = System.Windows.Media.Brushes.Yellow;
-        }
-
-        private void btnDrawer1_Click(object sender, RoutedEventArgs e)
-        {
-            btnDrawer1.Foreground = System.Windows.Media.Brushes.Yellow;
-            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
-
-           if(communicationState) mobjNumReg.SetValue(1, 1); // drawer1 için 1. registerı 1 yap
-        }
-
-        private void btnDrawer2_Click(object sender, RoutedEventArgs e)
-        {
-            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer2.Foreground = System.Windows.Media.Brushes.Yellow;
-            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
-
-            if(communicationState) mobjNumReg.SetValue(1, 2); // drawer2 için 1. registerı 2 yap
-        }
-
-        private void btnDrawer3_Click(object sender, RoutedEventArgs e)
-        {
-            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer3.Foreground = System.Windows.Media.Brushes.Yellow;
-            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
-
-            if(communicationState) mobjNumReg.SetValue(1, 3); // drawer3 için 1. registerı 3 yap
-        }
-
-        private void btnDrawer4_Click(object sender, RoutedEventArgs e)
-        {
-            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer4.Foreground = System.Windows.Media.Brushes.Yellow;
-            btnDrawer5.Foreground = System.Windows.Media.Brushes.White;
-
-            if(communicationState) mobjNumReg.SetValue(1, 4); // drawer4 için 1. registerı 4 yap
-        }
-
-        private void btnDrawer5_Click(object sender, RoutedEventArgs e)
-        {
-            btnDrawer1.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer2.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer3.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer4.Foreground = System.Windows.Media.Brushes.White;
-            btnDrawer5.Foreground = System.Windows.Media.Brushes.Yellow;
-
-            if(communicationState) mobjNumReg.SetValue(1, 5); // drawer5 için 1. registerı 5 yap
-        }
+       
 
         private async void btnRun_Click(object sender, RoutedEventArgs e)  //Çalışmıyor!!
         {
