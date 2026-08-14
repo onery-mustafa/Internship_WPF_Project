@@ -447,13 +447,14 @@ namespace Internship_WPF_Project
             int numRegIndex = 0;
             numRegIndex = listViewIndex + 1;
 
-            if (!int.TryParse(txtNumRegSet.Text, out int numRegValue))
+            if (!int.TryParse(txtNumRegSet.Text, out int numRegValue) )
             {
                 MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            if(numRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-            
+
 
             mobjNumReg.SetValue(numRegIndex, numRegValue);
 
