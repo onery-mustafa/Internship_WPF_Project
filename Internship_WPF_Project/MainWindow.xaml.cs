@@ -4,6 +4,7 @@ using System.Collections; // asenkron timer için. işlemler için.
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Threading; // Timer için
 
 
@@ -64,6 +65,8 @@ namespace Internship_WPF_Project
         private short ufNum;
         public short UFNum { get { return ufNum; } set { ufNum = value; OnPropertyChanged("UFNum"); } }
 
+        int i;
+
 
 
         public MainWindow()
@@ -74,7 +77,7 @@ namespace Internship_WPF_Project
 
             
            // int[] numReg = new int[200];
-            for (int i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
+            for (i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
             
             
             /*
@@ -446,6 +449,16 @@ namespace Internship_WPF_Project
             if(!int.TryParse(txtNumRegSet.Text, out int numRegValue)) MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             mobjNumReg.SetValue(numRegIndex, numRegValue);
+
+            object valueNumReg = 0;
+            if(communicationState) mobjNumReg.GetValue(numRegIndex, ref valueNumReg);
+
+            // numRegValues.Items.Add($"R[{i}] = {valueNumReg}");
+            numRegIndex -= 1;
+            numRegValues.Items.RemoveAt(numRegIndex);
+            numRegValues.Items.Insert(numRegIndex, $"R[{numRegIndex+1}] = {valueNumReg}");
+
+
         }
     }
             
