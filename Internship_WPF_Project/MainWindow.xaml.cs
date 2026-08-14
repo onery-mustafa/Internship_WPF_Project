@@ -444,20 +444,28 @@ namespace Internship_WPF_Project
             }
 
             int listViewIndex = numRegValues.SelectedIndex;
-            int numRegIndex = listViewIndex + 1;
+            int numRegIndex = 0;
+            numRegIndex = listViewIndex + 1;
 
-            if(!int.TryParse(txtNumRegSet.Text, out int numRegValue)) MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            if (!int.TryParse(txtNumRegSet.Text, out int numRegValue))
+            {
+                MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            
 
             mobjNumReg.SetValue(numRegIndex, numRegValue);
 
-            object valueNumReg = 0;
-            if(communicationState) mobjNumReg.GetValue(numRegIndex, ref valueNumReg);
+            object valueNumReg = null;
 
-            // numRegValues.Items.Add($"R[{i}] = {valueNumReg}");
-            //numRegIndex -= 1;
-            numRegValues.Items.RemoveAt(listViewIndex);
-            numRegValues.Items.Insert(listViewIndex, $"R[{numRegIndex}] = {valueNumReg}");
+            mobjCore.DataTable.Refresh();
 
+            if (communicationState && mobjNumReg.GetValue(numRegIndex, ref valueNumReg))
+            {
+                numRegValues.Items.RemoveAt(listViewIndex);
+                numRegValues.Items.Insert(listViewIndex, $"R[{numRegIndex}] = {valueNumReg}");
+            }
 
         }
     }
