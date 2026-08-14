@@ -79,9 +79,11 @@ namespace Internship_WPF_Project
            // int[] numReg = new int[200];
             for (int i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
 
+            for (int i = 1; i <= 200; i++) posRegValues.Items.Add($"R[{i}] = ");
 
-            
-            
+
+
+
             /*
             int[] numReg = new int[200];
             numReg[1] = 0; // drawer1 için 1. registerı 0 yap

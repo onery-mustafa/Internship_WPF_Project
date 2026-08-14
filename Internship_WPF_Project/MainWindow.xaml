@@ -278,6 +278,12 @@
                         </Border>
                     </StackPanel>
 
+                    <Border Background="AliceBlue" Width="610" Height="110" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="3">
+                            <ListView x:Name="posRegValues" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Single" />
+                        </ScrollViewer>
+                    </Border>
+
 
 
 
