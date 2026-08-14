@@ -194,42 +194,93 @@
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="10"/>
                     <RowDefinition />
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="10"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="10"/>
                     <ColumnDefinition />
-                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" >
           
-                        <Border  Background="#3D517D" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1" >
-                            <Label Content="Set Num Registers" Foreground="White" HorizontalContentAlignment="Center"/>
+                        <Border  Background="#3D517D" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1" HorizontalAlignment="Left">
+                            <Label Content="Set Num Registers" Foreground="AliceBlue" HorizontalContentAlignment="Center"/>
                         </Border>
 
-                        <Border Background="LightGray" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3">
+                    <Border Background="LightGray" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
                                 <TextBox x:Name="txtNumRegSet" Width="120" Background="Transparent" Margin="3,3,0,3" BorderBrush="Transparent"/>
                                 <Button  x:Name="btnNumRegSet" Content="OK" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click"/>
                             </StackPanel>
                         </Border>
 
-                    <Border Background="AliceBlue" Width="150" Height="100" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3">
+                    <Border Background="AliceBlue" Width="150" Height="100" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left">
                         <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="3">
                                 <ListView Name="numRegValues" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Single" />
                             </ScrollViewer>
                         </Border>
 
-                    <Border Background="#3D517D" Width="580" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1" Margin="0,10,0,0">
-                        
+                    <Border Background="#3D517D" Width="610" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1" Margin="0,10,0,0" HorizontalAlignment="Left">
+                        <Label Content="Set Position Registers" Foreground="AliceBlue" HorizontalContentAlignment="Center"/>
                     </Border>
-                    
-                    
-                    
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Border Background="LightGray"  Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="X=" FontSize="10"/>
+                                <TextBox x:Name="txtNumRegSe" Width="50" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" />
+                                <Button  x:Name="btnNumRegSe" Content="OK" FontSize="10" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click" />
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="LightGray"  Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Y=" FontSize="9"/>
+                                <TextBox x:Name="txtNumRegS" Width="50" Background="Transparent" Margin="3,3,0,3" BorderBrush="Transparent"/>
+                                <Button  x:Name="btnNumRegS" Content="OK" FontSize="9" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="LightGray"  Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Z=" FontSize="9"/>
+                                <TextBox x:Name="txtNumReg" Width="50" Background="Transparent" Margin="3,3,0,3" BorderBrush="Transparent"/>
+                                <Button  x:Name="btnNumReg" Content="OK" FontSize="9" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="LightGray"  Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="W=" FontSize="9"/>
+                                <TextBox x:Name="txtNumRe" Width="50" Background="Transparent" Margin="3,3,0,3" BorderBrush="Transparent"/>
+                                <Button  x:Name="btnNumRe" Content="OK" FontSize="9" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="LightGray"  Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="P=" FontSize="9"/>
+                                <TextBox x:Name="txtNumR" Width="50" Background="Transparent" Margin="3,3,0,3" BorderBrush="Transparent"/>
+                                <Button  x:Name="btnNumR" Content="OK" FontSize="9" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="LightGray"  Height="30" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3" HorizontalAlignment="Left" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="R=" FontSize="9"/>
+                                <TextBox x:Name="txtNum" Width="50" Background="Transparent" Margin="3,3,0,3" BorderBrush="Transparent"/>
+                                <Button  x:Name="btnNum" Content="OK" FontSize="9" Background="Transparent" Margin="0,3,3,3" BorderBrush="Transparent" Click="btnNumRegSet_Click"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+
+
+
 
                 </StackPanel>
 
