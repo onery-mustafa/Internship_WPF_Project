@@ -205,23 +205,9 @@
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" >
-                    <StackPanel>
-                        <Border Background="#3D517D" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1">
-                            <Label Content="Select Mode" Foreground="White" HorizontalContentAlignment="Center"/>
-                        </Border>
-
-                        <Border Background="#3D517D" Width="150" Height="120" CornerRadius="10,10,10,10" >
-                            <StackPanel VerticalAlignment="Center">
-                                <Button x:Name="btnMode1" Content="Manual" Background="Transparent" Foreground="White" BorderBrush="Transparent" Click="btnMode1_Click"/>
-                                <Button x:Name="btnMode2" Content="Auto" Background="Transparent" Foreground="White" BorderBrush="Transparent" Click="btnMode2_Click"/>
-                                <Button x:Name="btnMode3" Content="Mode 3" Background="Transparent" Foreground="White" BorderBrush="Transparent" />
-                                <Button x:Name="btnMode4" Content="Mode 4" Background="Transparent" Foreground="White" BorderBrush="Transparent" />
-                                <Button x:Name="btnMode5" Content="Mode 5" Background="Transparent" Foreground="White" BorderBrush="Transparent" />
-                            </StackPanel>
-                        </Border>
-
-                        <Border  Background="#3D517D" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1" Margin="0,10,0,0">
+                <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" >
+          
+                        <Border  Background="#3D517D" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1" >
                             <Label Content="Set Num Registers" Foreground="White" HorizontalContentAlignment="Center"/>
                         </Border>
 
@@ -233,31 +219,15 @@
                         </Border>
                         
                         <Border Background="AliceBlue" Width="150" Height="100" CornerRadius="10,10,10,10" BorderBrush="#3D517D" BorderThickness="3">
-                            
+
                             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="3">
-                                
-                                    <ListView Name="numRegValues" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Single" />
-                                    
-                                
+                                <ListView Name="numRegValues" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Single" />
                             </ScrollViewer>
                         </Border>
-                    </StackPanel>
+                    
+                    
+                    
 
-                    <StackPanel Margin="20,0,0,0">
-                        <Border Background="#3D517D" Width="150" Height="30" CornerRadius="10,10,10,10" BorderBrush="AliceBlue" BorderThickness="1">
-                            <Label Content="Select Drawer" Foreground="White" HorizontalContentAlignment="Center"/>
-                        </Border>
-
-                        <Border Background="#3D517D" Width="150" Height="120" CornerRadius="10,10,10,10" >
-                            <StackPanel VerticalAlignment="Center">
-                                <Button Name="btnDrawer1" Content="Drawer 1" Background="Transparent" Foreground="White" BorderBrush="Transparent" Click="btnDrawer1_Click" />
-                                <Button Name="btnDrawer2" Content="Drawer 2" Background="Transparent" Foreground="White" BorderBrush="Transparent" Click="btnDrawer2_Click" />
-                                <Button Name="btnDrawer3" Content="Drawer 3" Background="Transparent" Foreground="White" BorderBrush="Transparent" Click="btnDrawer3_Click" />
-                                <Button Name="btnDrawer4" Content="Drawer 4" Background="Transparent" Foreground="White" BorderBrush="Transparent" Click="btnDrawer4_Click" />
-                                <Button Name="btnDrawer5" Content="Drawer 5" Background="Transparent" Foreground="White" BorderBrush="Transparent" Click="btnDrawer5_Click" />
-                            </StackPanel>
-                        </Border>
-                    </StackPanel>
                 </StackPanel>
 
             </Grid>
