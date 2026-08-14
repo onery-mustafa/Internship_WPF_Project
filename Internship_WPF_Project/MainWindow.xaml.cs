@@ -65,8 +65,8 @@ namespace Internship_WPF_Project
         private short ufNum;
         public short UFNum { get { return ufNum; } set { ufNum = value; OnPropertyChanged("UFNum"); } }
 
-        int i;
 
+        object valueNumReg = null;
 
 
         public MainWindow()
@@ -77,7 +77,9 @@ namespace Internship_WPF_Project
 
             
            // int[] numReg = new int[200];
-            for (i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
+            for (int i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
+
+
             
             
             /*
@@ -123,6 +125,8 @@ namespace Internship_WPF_Project
                     txtIP.Text = ipAddress;
                     MessageBox.Show(ipAddress + " Successfully connected to the address!", "Connection Successful", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     refreshTimer.Start(); // Bağlantı başarılıysa veri okumayı başlat
+
+                    
                 }
                 else
                 {
@@ -332,6 +336,8 @@ namespace Internship_WPF_Project
             Opacity = 0.4;
             ip.ShowDialog();
             Opacity = 1;
+
+
             if (signinState)
             {
                 if (!string.IsNullOrEmpty(ip.InputIP)) ConnectToRobot(ip.InputIP);
@@ -445,6 +451,7 @@ namespace Internship_WPF_Project
 
             int listViewIndex = numRegValues.SelectedIndex;
             int numRegIndex = 0;
+            int[] NumRegIndex = new int[200];
             numRegIndex = listViewIndex + 1;
 
             if (!int.TryParse(txtNumRegSet.Text, out int numRegValue) )
@@ -458,15 +465,25 @@ namespace Internship_WPF_Project
 
             mobjNumReg.SetValue(numRegIndex, numRegValue);
 
-            object valueNumReg = null;
+            
+           // object[] ValueNumReg = new object[200];
 
             mobjCore.DataTable.Refresh();
+            numRegValues.Items.Clear();
 
-            if (communicationState && mobjNumReg.GetValue(numRegIndex, ref valueNumReg))
+            if (communicationState)
             {
-                numRegValues.Items.RemoveAt(listViewIndex);
-                numRegValues.Items.Insert(listViewIndex, $"R[{numRegIndex}] = {valueNumReg}");
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjNumReg.GetValue(i, ref valueNumReg);
+                    numRegValues.Items.Add($"R[{i}] = {valueNumReg}");
+                }
             }
+
+            
+           // for (i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = {valueNumReg}");
+
+            //  numRegValues.Items.Insert(listViewIndex, $"R[{numRegIndex}] = {valueNumReg}");
 
         }
     }
