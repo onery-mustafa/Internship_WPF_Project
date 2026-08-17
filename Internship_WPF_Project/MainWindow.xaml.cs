@@ -1,12 +1,12 @@
 ﻿using Internship_WPF_Project.View.IP;
 using Internship_WPF_Project.View.SignIn;
 using System.Collections; // asenkron timer için. işlemler için. 
+using System.Collections; // array için
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading; // Timer için
-using System.Collections; // array için
 
 
 namespace Internship_WPF_Project
@@ -70,6 +70,13 @@ namespace Internship_WPF_Project
 
         object valueNumReg = null;
 
+        Array sngJoint = new float[6];
+
+        Array xyzwpr = new float[9];
+        Array config = new short[7];
+        Array joint = new float[9];
+        short intUF = 0, intUT = 0, intValidC = 0, intValidJ = 0;
+
 
         public MainWindow()
         {
@@ -117,7 +124,7 @@ namespace Internship_WPF_Project
                 mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
                 mobjTask = mobjDataTable.AddTask(FRRJIf.FRIF_DATA_TYPE.TASK, 1); // program adı
                 mobjNumReg = mobjDataTable.AddNumReg(FRRJIf.FRIF_DATA_TYPE.NUMREG_INT, 1, 200); // numerik registerlar
-                mobjPosReg = mobjDataTable.AddPosReg(FRRJIf.FRIF_DATA_TYPE.POSREG, 1, 1, 10); // Position registerlar
+                mobjPosReg = mobjDataTable.AddPosReg(FRRJIf.FRIF_DATA_TYPE.POSREG, 1, 1, 200); // Position registerlar
 
 
 
@@ -170,10 +177,7 @@ namespace Internship_WPF_Project
             }
 
             // 2. Gelen verileri ayıkla
-            Array xyzwpr = new float[9];
-            Array config = new short[7];
-            Array joint = new float[9];
-            short intUF = 0, intUT = 0, intValidC = 0, intValidJ = 0;
+            
 
             if (mobjCurPos.GetValue(ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ))
             {
@@ -367,10 +371,6 @@ namespace Internship_WPF_Project
             // btnIP.Content = ip.InputIP;
         }
 
-        
-
-       
-
         private async void btnRun_Click(object sender, RoutedEventArgs e)  //Çalışmıyor!!
         {
             // mobjCore.Cgtp.SelectProgram("MAIN", 1);  // https://github.com/underautomation/Fanuc.NET/blob/main/README.md
@@ -440,7 +440,7 @@ namespace Internship_WPF_Project
 
         }
 
-        Array sngJoint = new float[6];
+        
         private void btnPosRegSet_J1_Click(object sender, RoutedEventArgs e)
         {
             if (!communicationState)
@@ -461,8 +461,22 @@ namespace Internship_WPF_Project
             }
             if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+
+
             sngJoint.SetValue(posRegValue, 0);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+
+            mobjCore.DataTable.Refresh();
+            posRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjPosReg.GetValue(i, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+                    posRegValues.Items.Add($"PR[{i}]:    J1={joint.GetValue(0)} J2={joint.GetValue(1)} J3={joint.GetValue(2)} J4={joint.GetValue(3)} J5={joint.GetValue(4)} J6={joint.GetValue(5)}");
+                }
+            }
         }
 
         private void btnPosRegSet_J2_Click(object sender, RoutedEventArgs e)
@@ -487,6 +501,18 @@ namespace Internship_WPF_Project
 
             sngJoint.SetValue(posRegValue, 1);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+
+            mobjCore.DataTable.Refresh();
+            posRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjPosReg.GetValue(i, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+                    posRegValues.Items.Add($"PR[{i}]:    J1={joint.GetValue(0)} J2={joint.GetValue(1)} J3={joint.GetValue(2)} J4={joint.GetValue(3)} J5={joint.GetValue(4)} J6={joint.GetValue(5)}");
+                }
+            }
         }
 
         private void btnPosRegSet_J3_Click(object sender, RoutedEventArgs e)
@@ -511,6 +537,18 @@ namespace Internship_WPF_Project
 
             sngJoint.SetValue(posRegValue, 2);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+
+            mobjCore.DataTable.Refresh();
+            posRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjPosReg.GetValue(i, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+                    posRegValues.Items.Add($"PR[{i}]:    J1={joint.GetValue(0)} J2={joint.GetValue(1)} J3={joint.GetValue(2)} J4={joint.GetValue(3)} J5={joint.GetValue(4)} J6={joint.GetValue(5)}");
+                }
+            }
         }
 
         private void btnPosRegSet_J4_Click(object sender, RoutedEventArgs e)
@@ -535,6 +573,18 @@ namespace Internship_WPF_Project
 
             sngJoint.SetValue(posRegValue, 3);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+
+            mobjCore.DataTable.Refresh();
+            posRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjPosReg.GetValue(i, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+                    posRegValues.Items.Add($"PR[{i}]:    J1={joint.GetValue(0)} J2={joint.GetValue(1)} J3={joint.GetValue(2)} J4={joint.GetValue(3)} J5={joint.GetValue(4)} J6={joint.GetValue(5)}");
+                }
+            }
         }
 
         private void btnPosRegSet_J5_Click(object sender, RoutedEventArgs e)
@@ -559,6 +609,18 @@ namespace Internship_WPF_Project
 
             sngJoint.SetValue(posRegValue, 4);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+
+            mobjCore.DataTable.Refresh();
+            posRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjPosReg.GetValue(i, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+                    posRegValues.Items.Add($"PR[{i}]:    J1={joint.GetValue(0)} J2={joint.GetValue(1)} J3={joint.GetValue(2)} J4={joint.GetValue(3)} J5={joint.GetValue(4)} J6={joint.GetValue(5)}");
+                }
+            }
         }
 
         private void btnPosRegSet_J6_Click(object sender, RoutedEventArgs e)
@@ -583,6 +645,18 @@ namespace Internship_WPF_Project
 
             sngJoint.SetValue(posRegValue, 5);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+
+            mobjCore.DataTable.Refresh();
+            posRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjPosReg.GetValue(i, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+                    posRegValues.Items.Add($"PR[{i}]:    J1={joint.GetValue(0)} J2={joint.GetValue(1)} J3={joint.GetValue(2)} J4={joint.GetValue(3)} J5={joint.GetValue(4)} J6={joint.GetValue(5)}");
+                }
+            }
         }
     }
             
