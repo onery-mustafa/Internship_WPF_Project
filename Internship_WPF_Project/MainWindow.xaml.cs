@@ -19,6 +19,7 @@ namespace Internship_WPF_Project
         private FRRJIf.DataSysVar mobjSpeedVar; // hız
         private FRRJIf.DataTask mobjTask; //program adını alma
         private FRRJIf.DataNumReg mobjNumReg; // numerik regiterlerı get ve set edebilmek için. 
+        private FRRJIf.DataPosReg mobjPosReg; // PR' ları get ve set edebilmek için
 
         private bool communicationState;
         private bool signinState;
@@ -79,7 +80,7 @@ namespace Internship_WPF_Project
            // int[] numReg = new int[200];
             for (int i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
 
-            for (int i = 1; i <= 200; i++) posRegValues.Items.Add($"PR[{i}]:    X=                      Y=                      Z=                      W=                      P=                      R=                      ");
+            for (int i = 1; i <= 200; i++) posRegValues.Items.Add($"PR[{i}]:    J1=                      J2=                      J3=                      J4=                      J5=                      J6=                      ");
 
 
 
@@ -115,6 +116,7 @@ namespace Internship_WPF_Project
                 mobjSpeedVar = mobjDataTable.AddSysVar(FRRJIf.FRIF_DATA_TYPE.SYSVAR_INT, "$MCR.$GENOVERRIDE"); // hız
                 mobjTask = mobjDataTable.AddTask(FRRJIf.FRIF_DATA_TYPE.TASK, 1); // program adı
                 mobjNumReg = mobjDataTable.AddNumReg(FRRJIf.FRIF_DATA_TYPE.NUMREG_INT, 1, 200); // numerik registerlar
+                mobjPosReg = mobjDataTable.AddPosReg(FRRJIf.FRIF_DATA_TYPE.POSREG, 1, 1, 10); // Position registerlar
 
 
 
