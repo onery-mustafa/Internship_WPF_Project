@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading; // Timer için
+using System.Collections; // array için
 
 
 namespace Internship_WPF_Project
@@ -403,7 +404,7 @@ namespace Internship_WPF_Project
 
             int listViewIndex = numRegValues.SelectedIndex;
             int numRegIndex = 0;
-            int[] NumRegIndex = new int[200];
+            int[] NumRegIndex = new int[200]; // kullanılmadı. 
             numRegIndex = listViewIndex + 1;
 
             if (!int.TryParse(txtNumRegSet.Text, out int numRegValue) )
@@ -437,6 +438,151 @@ namespace Internship_WPF_Project
 
             //  numRegValues.Items.Insert(listViewIndex, $"R[{numRegIndex}] = {valueNumReg}");
 
+        }
+
+        Array sngJoint = new float[6];
+        private void btnPosRegSet_J1_Click(object sender, RoutedEventArgs e)
+        {
+            if (!communicationState)
+            {
+                MessageBox.Show("No connection!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int listViewIndex = posRegValues.SelectedIndex;
+            int posRegIndex = 0;
+            posRegIndex = listViewIndex + 1;
+            
+
+            if (!float.TryParse(txtPosRegSet_J1.Text, out float posRegValue))
+            {
+                MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            sngJoint.SetValue(posRegValue, 0);
+            mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+        }
+
+        private void btnPosRegSet_J2_Click(object sender, RoutedEventArgs e)
+        {
+            if (!communicationState)
+            {
+                MessageBox.Show("No connection!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int listViewIndex = posRegValues.SelectedIndex;
+            int posRegIndex = 0;
+            posRegIndex = listViewIndex + 1;
+            
+
+            if (!float.TryParse(txtPosRegSet_J2.Text, out float posRegValue))
+            {
+                MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            sngJoint.SetValue(posRegValue, 1);
+            mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+        }
+
+        private void btnPosRegSet_J3_Click(object sender, RoutedEventArgs e)
+        {
+            if (!communicationState)
+            {
+                MessageBox.Show("No connection!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int listViewIndex = posRegValues.SelectedIndex;
+            int posRegIndex = 0;
+            posRegIndex = listViewIndex + 1;
+            
+
+            if (!float.TryParse(txtPosRegSet_J3.Text, out float posRegValue))
+            {
+                MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            sngJoint.SetValue(posRegValue, 2);
+            mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+        }
+
+        private void btnPosRegSet_J4_Click(object sender, RoutedEventArgs e)
+        {
+            if (!communicationState)
+            {
+                MessageBox.Show("No connection!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int listViewIndex = posRegValues.SelectedIndex;
+            int posRegIndex = 0;
+            posRegIndex = listViewIndex + 1;
+            
+
+            if (!float.TryParse(txtPosRegSet_J4.Text, out float posRegValue))
+            {
+                MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            sngJoint.SetValue(posRegValue, 3);
+            mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+        }
+
+        private void btnPosRegSet_J5_Click(object sender, RoutedEventArgs e)
+        {
+            if (!communicationState)
+            {
+                MessageBox.Show("No connection!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int listViewIndex = posRegValues.SelectedIndex;
+            int posRegIndex = 0;
+            posRegIndex = listViewIndex + 1;
+            
+
+            if (!float.TryParse(txtPosRegSet_J5.Text, out float posRegValue))
+            {
+                MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            sngJoint.SetValue(posRegValue, 4);
+            mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+        }
+
+        private void btnPosRegSet_J6_Click(object sender, RoutedEventArgs e)
+        {
+            if (!communicationState)
+            {
+                MessageBox.Show("No connection!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int listViewIndex = posRegValues.SelectedIndex;
+            int posRegIndex = 0;
+            posRegIndex = listViewIndex + 1;
+            
+
+            if (!float.TryParse(txtPosRegSet_J6.Text, out float posRegValue))
+            {
+                MessageBox.Show("Invalid value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            sngJoint.SetValue(posRegValue, 5);
+            mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
         }
     }
             
