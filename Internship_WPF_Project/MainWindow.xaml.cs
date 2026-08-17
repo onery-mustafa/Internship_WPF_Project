@@ -427,7 +427,7 @@ namespace Internship_WPF_Project
             }
             if(numRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-
+            txtNumRegSet.Text = "";
 
             mobjNumReg.SetValue(numRegIndex, numRegValue);
 
