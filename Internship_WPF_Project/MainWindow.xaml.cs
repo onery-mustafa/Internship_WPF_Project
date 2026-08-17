@@ -365,6 +365,19 @@ namespace Internship_WPF_Project
             }
 
 
+            mobjCore.DataTable.Refresh();
+            posRegValues.Items.Clear();
+
+            if (communicationState)
+            {
+                for (int i = 1; i <= 200; i++)
+                {
+                    mobjPosReg.GetValue(i, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+                    posRegValues.Items.Add($"PR[{i}]:    J1={joint.GetValue(0)} J2={joint.GetValue(1)} J3={joint.GetValue(2)} J4={joint.GetValue(3)} J5={joint.GetValue(4)} J6={joint.GetValue(5)}");
+                }
+            }
+
+
 
 
 
@@ -439,8 +452,7 @@ namespace Internship_WPF_Project
             //  numRegValues.Items.Insert(listViewIndex, $"R[{numRegIndex}] = {valueNumReg}");
 
         }
-
-        
+   
         private void btnPosRegSet_J1_Click(object sender, RoutedEventArgs e)
         {
             if (!communicationState)
@@ -461,10 +473,13 @@ namespace Internship_WPF_Project
             }
             if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+            mobjPosReg.GetValue(posRegIndex, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+            sngJoint = joint;
 
 
             sngJoint.SetValue(posRegValue, 0);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+            txtPosRegSet_J1.Text = "";
 
             mobjCore.DataTable.Refresh();
             posRegValues.Items.Clear();
@@ -499,8 +514,12 @@ namespace Internship_WPF_Project
             }
             if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+            mobjPosReg.GetValue(posRegIndex, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+            sngJoint = joint;
+
             sngJoint.SetValue(posRegValue, 1);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+            txtPosRegSet_J2.Text = "";
 
             mobjCore.DataTable.Refresh();
             posRegValues.Items.Clear();
@@ -535,8 +554,12 @@ namespace Internship_WPF_Project
             }
             if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+            mobjPosReg.GetValue(posRegIndex, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+            sngJoint = joint;
+
             sngJoint.SetValue(posRegValue, 2);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+            txtPosRegSet_J3.Text = "";
 
             mobjCore.DataTable.Refresh();
             posRegValues.Items.Clear();
@@ -571,8 +594,12 @@ namespace Internship_WPF_Project
             }
             if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+            mobjPosReg.GetValue(posRegIndex, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+            sngJoint = joint;
+
             sngJoint.SetValue(posRegValue, 3);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+            txtPosRegSet_J4.Text = "";
 
             mobjCore.DataTable.Refresh();
             posRegValues.Items.Clear();
@@ -607,8 +634,12 @@ namespace Internship_WPF_Project
             }
             if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+            mobjPosReg.GetValue(posRegIndex, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+            sngJoint = joint;
+
             sngJoint.SetValue(posRegValue, 4);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+            txtPosRegSet_J5.Text = "";
 
             mobjCore.DataTable.Refresh();
             posRegValues.Items.Clear();
@@ -643,8 +674,12 @@ namespace Internship_WPF_Project
             }
             if (posRegValues.SelectedIndex == -1) MessageBox.Show("Please selecet a register!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
+            mobjPosReg.GetValue(posRegIndex, ref xyzwpr, ref config, ref joint, ref intUF, ref intUT, ref intValidC, ref intValidJ);
+            sngJoint = joint;
+
             sngJoint.SetValue(posRegValue, 5);
             mobjPosReg.SetValueJoint(posRegIndex, ref sngJoint, 15, 15);
+            txtPosRegSet_J6.Text = "";
 
             mobjCore.DataTable.Refresh();
             posRegValues.Items.Clear();
