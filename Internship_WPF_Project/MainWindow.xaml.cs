@@ -240,7 +240,7 @@ namespace Internship_WPF_Project
                 if (mobjAlarmCurrent.GetValue(i, ref AlarmId, ref AlarmNumber, ref CauseAlarmID, ref CauseAlarmNumber, ref Severity, ref Year, ref Month, ref Day, ref Hour, ref Minute, ref Second, ref AlarmMessage, ref CauseAlarmMessage, ref SeverityMessage))
                 {
                     //txtAlarm.Text = AlarmMessage;
-                    listAlarmMesages.Items.Add(AlarmMessage);
+                    listAlarmMesages.Items.Add($"{i}) {AlarmMessage}");
                 }
             }
            
