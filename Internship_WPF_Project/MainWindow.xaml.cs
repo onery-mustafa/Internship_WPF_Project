@@ -125,7 +125,7 @@ namespace Internship_WPF_Project
         private void SetupTimer()
         {
             refreshTimer = new DispatcherTimer();
-            refreshTimer.Interval = TimeSpan.FromMilliseconds(10);
+            refreshTimer.Interval = TimeSpan.FromMilliseconds(100);
             refreshTimer.Tick += RefreshTimer_Tick;
         }
 
