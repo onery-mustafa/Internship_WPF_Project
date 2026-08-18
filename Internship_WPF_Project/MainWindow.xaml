@@ -62,9 +62,10 @@
                 </Border>
 
                 <Border Height="100" Background="#333333" CornerRadius="10,10,10,10">
-                    <StackPanel >
-                        <StackPanel HorizontalAlignment="Left" Width="100">
-                            <TextBlock x:Name="txtAlarm" Width="100" Foreground="AliceBlue"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel HorizontalAlignment="Left" >
+                         <!--   <TextBlock x:Name="txtAlarm" Width="100" Foreground="AliceBlue"/>  -->
+                            <ListView x:Name="listAlarmMesages" Width="530" Background="Transparent"/>
                         </StackPanel>
 
                         <StackPanel HorizontalAlignment="Right" Width="100" Height="100">
