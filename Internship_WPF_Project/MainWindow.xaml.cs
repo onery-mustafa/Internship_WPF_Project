@@ -21,6 +21,7 @@ namespace Internship_WPF_Project
         private FRRJIf.DataTask mobjTask; //program adını alma
         private FRRJIf.DataNumReg mobjNumReg; // numerik regiterlerı get ve set edebilmek için. 
         private FRRJIf.DataPosReg mobjPosReg; // PR' ları get ve set edebilmek için
+        private FRRJIf.DataAlarm mobjAlarmCurrent;
 
         private bool communicationState;
         private bool signinState;
@@ -77,6 +78,23 @@ namespace Internship_WPF_Project
         Array joint = new float[9];
         short intUF = 0, intUT = 0, intValidC = 0, intValidJ = 0;
 
+       // private int Count = 0;
+        short AlarmId;
+        short AlarmNumber;
+        short CauseAlarmID;
+        short CauseAlarmNumber;
+        short Severity;
+        short Year;
+        short Month;
+        short Day;
+        short Hour;
+        short Minute;
+        short Second;
+        string AlarmMessage = "";
+        string CauseAlarmMessage = "";
+        string SeverityMessage = "";
+
+
 
         public MainWindow()
         {
@@ -125,6 +143,7 @@ namespace Internship_WPF_Project
                 mobjTask = mobjDataTable.AddTask(FRRJIf.FRIF_DATA_TYPE.TASK, 1); // program adı
                 mobjNumReg = mobjDataTable.AddNumReg(FRRJIf.FRIF_DATA_TYPE.NUMREG_INT, 1, 200); // numerik registerlar
                 mobjPosReg = mobjDataTable.AddPosReg(FRRJIf.FRIF_DATA_TYPE.POSREG, 1, 1, 200); // Position registerlar
+                mobjAlarmCurrent = mobjDataTable.AddAlarm(FRRJIf.FRIF_DATA_TYPE.ALARM_LIST, 10, 0);
 
 
 
@@ -212,6 +231,14 @@ namespace Internship_WPF_Project
             if (mobjTask.GetValue(ref progName, ref lineNumber, ref state, ref parentProgName))
             {
                 txtProgramName.Text = progName;
+            }
+
+            
+
+            
+            if (mobjAlarmCurrent.GetValue(1, ref AlarmId, ref AlarmNumber, ref CauseAlarmID, ref CauseAlarmNumber, ref Severity, ref Year, ref Month, ref Day, ref Hour, ref Minute, ref Second, ref AlarmMessage, ref CauseAlarmMessage, ref SeverityMessage))
+            {
+                txtAlarm.Text = AlarmMessage;
             }
         }
 

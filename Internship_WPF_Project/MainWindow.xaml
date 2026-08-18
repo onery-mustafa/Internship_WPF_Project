@@ -62,9 +62,9 @@
                 </Border>
 
                 <Border Height="100" Background="#333333" CornerRadius="10,10,10,10">
-                    <StackPanel>
-                        <StackPanel>
-                        
+                    <StackPanel >
+                        <StackPanel HorizontalAlignment="Left" Width="100">
+                            <TextBlock x:Name="txtAlarm" Width="100" Foreground="AliceBlue"/>
                         </StackPanel>
 
                         <StackPanel HorizontalAlignment="Right" Width="100" Height="100">
