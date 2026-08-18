@@ -78,7 +78,7 @@ namespace Internship_WPF_Project
         Array joint = new float[9];
         short intUF = 0, intUT = 0, intValidC = 0, intValidJ = 0;
 
-       // private int Count = 0;
+        int Count = 1;
         short AlarmId;
         short AlarmNumber;
         short CauseAlarmID;
@@ -143,7 +143,7 @@ namespace Internship_WPF_Project
                 mobjTask = mobjDataTable.AddTask(FRRJIf.FRIF_DATA_TYPE.TASK, 1); // program adı
                 mobjNumReg = mobjDataTable.AddNumReg(FRRJIf.FRIF_DATA_TYPE.NUMREG_INT, 1, 200); // numerik registerlar
                 mobjPosReg = mobjDataTable.AddPosReg(FRRJIf.FRIF_DATA_TYPE.POSREG, 1, 1, 200); // Position registerlar
-                mobjAlarmCurrent = mobjDataTable.AddAlarm(FRRJIf.FRIF_DATA_TYPE.ALARM_LIST, 10, 0);
+                mobjAlarmCurrent = mobjDataTable.AddAlarm(FRRJIf.FRIF_DATA_TYPE.ALARM_LIST, 50, 0);
 
 
 
@@ -233,14 +233,17 @@ namespace Internship_WPF_Project
                 txtProgramName.Text = progName;
             }
 
-            
 
-            
-            if (mobjAlarmCurrent.GetValue(1, ref AlarmId, ref AlarmNumber, ref CauseAlarmID, ref CauseAlarmNumber, ref Severity, ref Year, ref Month, ref Day, ref Hour, ref Minute, ref Second, ref AlarmMessage, ref CauseAlarmMessage, ref SeverityMessage))
+            listAlarmMesages.Items.Clear();
+            for (int i=1; i<=50; i++)
             {
-                //txtAlarm.Text = AlarmMessage;
-                listAlarmMesages.Items.Add(AlarmMessage);
+                if (mobjAlarmCurrent.GetValue(i, ref AlarmId, ref AlarmNumber, ref CauseAlarmID, ref CauseAlarmNumber, ref Severity, ref Year, ref Month, ref Day, ref Hour, ref Minute, ref Second, ref AlarmMessage, ref CauseAlarmMessage, ref SeverityMessage))
+                {
+                    //txtAlarm.Text = AlarmMessage;
+                    listAlarmMesages.Items.Add(AlarmMessage);
+                }
             }
+           
         }
 
 

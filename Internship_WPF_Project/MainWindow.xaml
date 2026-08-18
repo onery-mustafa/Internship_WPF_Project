@@ -65,7 +65,9 @@
                     <StackPanel Orientation="Horizontal">
                         <StackPanel HorizontalAlignment="Left" >
                           <!--  <TextBlock x:Name="txtAlarm" Width="100" Foreground="AliceBlue"/> -->
-                            <ListView x:Name="listAlarmMesages" Width="530" Background="Transparent" Foreground="AliceBlue"/>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Panel.ZIndex="2">
+                                <ListView x:Name="listAlarmMesages" Width="530" Height="100" Background="Transparent" Foreground="AliceBlue"/>
+                            </ScrollViewer>
                         </StackPanel>
 
                         <StackPanel HorizontalAlignment="Right" Width="100" Height="100">
