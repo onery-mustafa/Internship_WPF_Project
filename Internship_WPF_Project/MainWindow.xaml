@@ -238,30 +238,53 @@
                     <Border Background="AliceBlue" Width="610" Height="150" CornerRadius="0,0,5,5" BorderBrush="#1c0f45" BorderThickness="3" HorizontalAlignment="Left">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal" Background="LightGray">
+                                <Border BorderBrush="#1c0f45" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
                                 <Label Content="J1=" FontSize="10" Width="25" />
-                                <TextBox x:Name="txtPosRegSet_J1" Width="55.667" Background="Transparent" BorderBrush="Transparent"  VerticalContentAlignment="Center"  BorderThickness="0"/>
-                                <Button  x:Name="btnPosRegSet_J1" Width="20"  Content="OK" FontSize="10"  Background="Transparent"   Click="btnPosRegSet_J1_Click" />
+                                <TextBox x:Name="txtPosRegSet_J1" Width="53.667" Background="Transparent" BorderBrush="Transparent"  VerticalContentAlignment="Center"  BorderThickness="0"/>
+                                <Button  x:Name="btnPosRegSet_J1" Width="20"  Content="OK" FontSize="10" BorderThickness="0" Background="Transparent"   Click="btnPosRegSet_J1_Click" />
+                                    </StackPanel>
+                                    </Border>
 
+                                <Border BorderBrush="#1c0f45" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
                                 <Label Content="J2=" FontSize="10" Width="25"/>
-                                <TextBox x:Name="txtPosRegSet_J2" Width="55.667" Background="Transparent" BorderBrush="Transparent"   VerticalContentAlignment="Center" BorderThickness="0"/>
-                                <Button  x:Name="btnPosRegSet_J2" Width="20" Content="OK" FontSize="10" Background="Transparent"    Click="btnPosRegSet_J2_Click"/>
+                                <TextBox x:Name="txtPosRegSet_J2" Width="53.667" Background="Transparent" BorderBrush="Transparent"   VerticalContentAlignment="Center" BorderThickness="0"/>
+                                <Button  x:Name="btnPosRegSet_J2" Width="20" Content="OK" BorderThickness="0" FontSize="10" Background="Transparent"    Click="btnPosRegSet_J2_Click"/>
+                                    </StackPanel>
+                                </Border>
 
-                                <Label Content="J3=" FontSize="10" Width="25"/>
-                                <TextBox x:Name="txtPosRegSet_J3" Width="55.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
-                                <Button  x:Name="btnPosRegSet_j3" Width="20" Content="OK" FontSize="10" Background="Transparent"   Click="btnPosRegSet_J3_Click"/>
+                                <Border BorderBrush="#1c0f45" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="J3=" FontSize="10" Width="25"/>
+                                <TextBox x:Name="txtPosRegSet_J3" Width="53.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
+                                <Button  x:Name="btnPosRegSet_j3" Width="20" Content="OK" BorderThickness="0" FontSize="10" Background="Transparent"   Click="btnPosRegSet_J3_Click"/>
+                                    </StackPanel>
+                                </Border>
 
-                                <Label Content="J4=" FontSize="10" Width="25"/>
-                                <TextBox x:Name="txtPosRegSet_J4" Width="55.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
-                                <Button  x:Name="btnPosRegSet_J4" Width="20" Content="OK" FontSize="10" Background="Transparent"   Click="btnPosRegSet_J4_Click"/>
+                                <Border BorderBrush="#1c0f45" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="J4=" FontSize="10" Width="25"/>
+                                <TextBox x:Name="txtPosRegSet_J4" Width="53.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
+                                        <Button  x:Name="btnPosRegSet_J4" Width="20" Content="OK" BorderBrush="Transparent" BorderThickness="0"  FontSize="10" Background="Transparent"   Click="btnPosRegSet_J4_Click"/>
+                                    </StackPanel>
+                                </Border>
 
-                                <Label Content="J5=" FontSize="10" Width="25"/>
-                                <TextBox x:Name="txtPosRegSet_J5" Width="55.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
-                                <Button  x:Name="btnPosRegSet_J5" Width="20" Content="OK" FontSize="10" Background="Transparent"   Click="btnPosRegSet_J5_Click"/>
+                                <Border BorderBrush="#1c0f45" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="J5=" FontSize="10" Width="25"/>
+                                <TextBox x:Name="txtPosRegSet_J5" Width="53.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
+                                        <Button  x:Name="btnPosRegSet_J5" Width="20" BorderThickness="0" BorderBrush="Transparent" Content="OK" FontSize="10" Background="Transparent"   Click="btnPosRegSet_J5_Click"/>
+                                    </StackPanel>
+                                </Border>
 
-                                <Label Content="J6=" FontSize="10" Width="25"/>
-                                <TextBox x:Name="txtPosRegSet_J6" Width="55.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
-                                <Button  x:Name="btnPosRegSet_J6" Width="20" Content="OK" FontSize="10" Background="Transparent"   Click="btnPosRegSet_J6_Click"/>
-
+                                <Border BorderBrush="#1c0f45" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="J6=" FontSize="10" Width="25"/>
+                                <TextBox x:Name="txtPosRegSet_J6" Width="53.667" Background="Transparent"  BorderBrush="Transparent" VerticalContentAlignment="Center" BorderThickness="0"/>
+                                <Button  x:Name="btnPosRegSet_J6" Width="20" Content="OK" BorderBrush="Transparent" BorderThickness="0" FontSize="10" Background="Transparent"   Click="btnPosRegSet_J6_Click"/>
+                                    </StackPanel>
+                                </Border>
 
                             </StackPanel>
                             
