@@ -106,7 +106,7 @@ namespace Internship_WPF_Project
            // int[] numReg = new int[200];
             for (int i = 1; i <= 200; i++) numRegValues.Items.Add($"R[{i}] = ");
 
-            for (int i = 1; i <= 200; i++) posRegValues.Items.Add($"PR[{i}]:    J1=                      J2=                      J3=                      J4=                      J5=                      J6=                      ");
+            for (int i = 1; i <= 200; i++) posRegValues.Items.Add($"PR[{i}]:    J1=                   J2=                   J3=                   J4=                   J5=                   J6=                   ");
 
 
 
